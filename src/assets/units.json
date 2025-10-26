@@ -1,0 +1,964 @@
+{
+  "units": [
+    {
+      "name": "Ao Shin",
+      "type": "Magic Caster",
+      "traits": ["Tempest", "Dragon"],
+      "cost": 5,
+      "ability": {
+        "name": "Lightning Rain",
+        "mana_start": 0,
+        "mana_max": 160,
+        "description": "Fire a barrage of 20/20/100 lightning strikes at random enemies. Each strike deals 160/235/666 (AP) magic damage and removes 10 current Mana from the current target."
+      },
+      "stats": {
+        "Damage": "160/235/666 (AP)"
+      }
+    },
+    {
+      "name": "Aurelion Sol",
+      "type": "Magic Caster",
+      "traits": ["Astral", "Evoker", "Dragon"],
+      "triple_trait": true,
+      "cost": 5,
+      "ability": {
+        "name": "Black Hole",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Summon a black hole under a random enemy. After 2 seconds, it deals 370/600/99999 (AP) magic damage to the target and enemies within 2 hexes, and increases their damage taken by 20% for 10 seconds. Black holes generated after 18 seconds of combat are larger and deal 20% more damage."
+      },
+      "stats": {
+        "Damage": "370/600/99999 (AP)"
+      }
+    },
+    {
+      "name": "Bard",
+      "type": "Magic Caster",
+      "traits": ["Guild", "Mystic", "Bard"],
+      "cost": 5,
+      "ability": {
+        "name": "Tempered Fate",
+        "mana_start": 160,
+        "mana_max": 240,
+        "description": "Stun the largest group of enemies for 1.25/2/15 seconds. While Stunned, enemies lose 1500%/2000%/999900% (AP) Durability."
+      },
+      "stats": {
+        "Stasis Duration": "1.25/2/15",
+        "% Increased Damage": "1500%/2000%/999900% (AP)"
+      }
+    },
+    {
+      "name": "Shyvana",
+      "type": "Magic Fighter",
+      "traits": ["Ragewing", "Shapeshifter", "Dragon"],
+      "triple_trait": true,
+      "cost": 5,
+      "ability": {
+        "name": "Dragon's Descent",
+        "mana_start": 15,
+        "mana_max": 60,
+        "description": "Transform into a dragon for the rest of combat and replace this ability with Flame Breath. Become briefly untargetable and dive-bomb into the largest group of enemies, dealing 80/150/1500 (AP) magic damage in a 3-hex circle and Stunning for 1.25/1.25/10 seconds. After landing, cast Flame Breath immediately. Flame Breath: Breathe fire in a cone, dealing up to 700/1200/20000 (AP) magic damage to enemies hit. While breathing fire, is always enraged."
+      },
+      "stats": {
+        "Initial Damage": "80/150/1500 (AP)",
+        "Flame Breath Damage": "700/1200/20000 (AP)",
+        "Stun Duration": "1.25/1.25/10"
+      }
+    },
+    {
+      "name": "Soraka",
+      "type": "Magic Caster",
+      "traits": ["Jade", "Starcaller"],
+      "cost": 5,
+      "ability": {
+        "name": "Starfall",
+        "mana_start": 100,
+        "mana_max": 200,
+        "description": "Call down a shower of 14 stars over the next 2 seconds. Allies are healed for 105/165/1000 (AP) each time a star hits them."
+      },
+      "stats": {
+        "Passive": "While any ally is below 50% Health, gain an additional 15 mana per attack.",
+        "Healing": "105/165/1000 (AP)"
+      }
+    },
+    {
+      "name": "Terra",
+      "type": "Attack Tank",
+      "traits": ["Monolith", "Dragon"],
+      "cost": 5,
+      "ability": {
+        "name": "Earthquake",
+        "mana_start": 30,
+        "mana_max": 70,
+        "description": "Stomp three times, creating a surrounding earthquake that deals 460/640/5360 (ArmorMRAD) physical damage. When it ends, gain 130/165/4000 (AP) Armor and Magic Resist for 8 seconds. While casting, become Unstoppable."
+      },
+      "stats": {
+        "Damage": "460/640/5360",
+        "Armor + MR": "150/200/2500%",
+        "Bonus Armor and Magic Resist": "130/165/4000 (AP)"
+      }
+    },
+    {
+      "name": "Yasuo",
+      "type": "Attack Fighter",
+      "traits": ["Mirage", "Dragonmancer", "Warrior"],
+      "triple_trait": true,
+      "cost": 5,
+      "ability": {
+        "name": "Sweeping Blade",
+        "mana_start": 0,
+        "mana_max": 30,
+        "description": "Gain 180/240/2500 (AP) Shield for 2/2/20 seconds and dash through the target, slashing nearby enemies for 135/245/6000 (AD) physical damage. Every third cast the slash deals 250% damage, hits a larger area, and Stuns enemies for 1.5 seconds. If only one enemy remains, repeatedly slash them until they die."
+      },
+      "stats": {
+        "Shield Amount": "180/240/2500 (AP)",
+        "Damage": "135/245/6000 (AD)"
+      }
+    },
+    {
+      "name": "Zoe",
+      "type": "Magic Caster",
+      "traits": ["Shimmerscale", "Spell Thief", "Mage"],
+      "cost": 5,
+      "ability": {
+        "name": "Spell Thief",
+        "mana_start": 40,
+        "mana_max": 90,
+        "description": "Nab an Ability from another dimension and cast it."
+      }
+    },
+    {
+      "name": "Daeja",
+      "type": "Magic Marksman",
+      "traits": ["Mirage", "Dragon"],
+      "cost": 4,
+      "ability": {
+        "name": "Windblast",
+        "mana_start": 0,
+        "mana_max": 100,
+        "description": "Deal 260/390/1350 (AP) magic damage toward the most enemies in a line."
+      },
+      "stats": {
+        "Passive": "Launch three barrages that each deal 30/45/155 (AP) bonus magic damage and reduce the target's Magic Resist by 5."
+      }
+    },
+    {
+      "name": "Graves",
+      "type": "Attack Fighter",
+      "traits": ["Tempest", "Cannoneer"],
+      "cost": 4,
+      "ability": {
+        "name": "Quickdraw",
+        "mana_start": 0,
+        "mana_max": 30,
+        "description": "Dash towards the target, fire two attacks, and gain 30/40/80 (AP) Armor and Magic Resist for 4 seconds."
+      },
+      "stats": {
+        "Passive": "Attacks fire 4 bullets in a cone that deal 35/60/200 (AD) physical damage each."
+      }
+    },
+    {
+      "name": "Hecarim",
+      "type": "Magic Tank",
+      "traits": ["Ragewing", "Cavalier"],
+      "cost": 4,
+      "ability": {
+        "name": "Onslaught of Shadows",
+        "mana_start": 30,
+        "mana_max": 90,
+        "description": "Summon spectral riders that charge through the target, dealing 200/300/1500 (AP) magic damage and Stunning enemies hit for 1.5/2/8 seconds."
+      },
+      "stats": {
+        "Damage": "200/300/1500 (AP)",
+        "Stun Duration": "1.5/2/8"
+      }
+    },
+    {
+      "name": "Idas",
+      "type": "Magic Tank",
+      "traits": ["Shimmerscale", "Dragon", "Guardian"],
+      "triple_trait": true,
+      "cost": 4,
+      "ability": {
+        "name": "Golden Scales",
+        "mana_start": 40,
+        "mana_max": 100,
+        "description": "For 2 seconds, reduce incoming damage by 30/50/300. Then heal 450/600/3000 (AP) Health and grant other nearby allies 150/250/1200 (AP) Shield for 5 seconds. The Shield grants 30% Attack Speed while it holds."
+      },
+      "stats": {
+        "Damage Reduction": "30/50/300",
+        "Heal": "450/600/3000 (AP)",
+        "Shield Amount": "150/250/1200 (AP)"
+      }
+    },
+    {
+      "name": "Jayce",
+      "type": "Magic Fighter",
+      "traits": ["Guild", "Shapeshifter"],
+      "cost": 4,
+      "ability": {
+        "name": "Mercurial Justice",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Transform into melee form, dealing 300/400/1500 (AP) magic damage to the current target and nearby enemies. Replace this Ability with Mercurial Judgement and gain 40 Armor and Magic Resist for the rest of combat. Mercurial Judgement: Deal 400/550/2000 (AP) magic damage and 225/275/1200 (AP) bonus magic damage to nearby enemies. Then, heal for 100/150/500 (AP) health and an additional 20% per enemy struck."
+      }
+    },
+    {
+      "name": "Nilah",
+      "type": "Attack Fighter",
+      "traits": ["Lagoon", "Assassin"],
+      "cost": 4,
+      "ability": {
+        "name": "Slipstream",
+        "mana_start": 0,
+        "mana_max": 25,
+        "description": "Dash through the target, dealing 270/435/1490 (ADAP) physical damage. If this damages a Shield, gain a Shield equal to 80/100/300% of the damage dealt to it for 4 seconds. Instantly recast if the target is killed or remains Shielded."
+      },
+      "stats": {
+        "Shield Steal": "80/100/300%",
+        "Damage": "140/235/790 (AD) + 130/200/700 (AP)",
+        "Total Damage": "270/435/1490"
+      }
+    },
+    {
+      "name": "Pantheon",
+      "type": "Attack Tank",
+      "traits": ["Whispers", "Warrior"],
+      "cost": 4,
+      "ability": {
+        "name": "Aegis Assault",
+        "mana_start": 30,
+        "mana_max": 90,
+        "description": "Brace a shield for 2 seconds, doubling passive Durability and dealing 230/360/1215 (ADAP) physical damage in a cone towards enemies over the duration. Wound enemies hit for 3 seconds."
+      },
+      "stats": {
+        "Passive": "Gain 20/25/40% Durability.",
+        "Wound": "Reduce healing received by 33%",
+        "Durability": "20/25/40%",
+        "Damage": "160/250/515 (AD) + 70/110/700 (AP)",
+        "Total Damage": "230/360/1215"
+      }
+    },
+    {
+      "name": "Shi Oh Yu",
+      "type": "Attack Fighter",
+      "traits": ["Jade", "Mystic", "Dragon"],
+      "triple_trait": true,
+      "cost": 4,
+      "ability": {
+        "name": "Jade Form",
+        "mana_start": 30,
+        "mana_max": 50,
+        "description": "Enter Jade stance, gaining 20%/25%/40% Durability, immunity to crowd control, and empowering the next 3 attacks with special effects. Attack 1: Deal 190/250/1700 (AD) physical damage and Stun the target for 1 second(s). Attack 2: Deal 190/250/1700 true damage. Attack 3: End the stance, dealing 190/250/1700 (AD) physical damage to all enemies in a line and Stunning them for 1 second(s)."
+      },
+      "stats": {
+        "Durability": "20/25/40%",
+        "Damage": "190/250/1700 (AD)"
+      }
+    },
+    {
+      "name": "Sohm",
+      "type": "Magic Caster",
+      "traits": ["Lagoon", "Mage", "Dragon"],
+      "triple_trait": true,
+      "cost": 4,
+      "ability": {
+        "name": "Tideblossom",
+        "mana_start": 0,
+        "mana_max": 40,
+        "description": "Mark an unmarked enemy, dealing 200/300/900 (AP) magic damage to enemies along the way. Marks transfer to a nearby enemy on Mark owner death. After 3 casts, the next cast deals 335/505/1510 (AP) magic damage in a 2-hex radius around all marked enemies."
+      }
+    },
+    {
+      "name": "Sy'fen",
+      "type": "Attack Fighter",
+      "traits": ["Whispers", "Bruiser", "Dragon"],
+      "triple_trait": true,
+      "cost": 4,
+      "ability": {
+        "name": "Rampage",
+        "mana_start": 30,
+        "mana_max": 75,
+        "description": "Charge toward the farthest enemy within 2.5 hexes, dealing 145/220/650 (AD) physical damage and Stunning enemies hit. Then bite an enemy, dealing 350/525/1575 (AD) physical damage and ignoring 33% (AP) of the target's Armor."
+      },
+      "stats": {
+        "Charge Damage": "145/220/650 (AD)",
+        "Bite Damage": "350/525/1575 (AD)",
+        "Armor Ignore Percent": "33% (AP)"
+      }
+    },
+    {
+      "name": "Tyrant Swain",
+      "type": "Magic Tank",
+      "traits": ["Darkflight", "Dragon"],
+      "cost": 4,
+      "ability": {
+        "name": "Dragon Master's Decree",
+        "mana_start": 60,
+        "mana_max": 125,
+        "description": "Launch 8 dragonlings toward nearby enemies. Each deals 90/130/600 (AP) magic damage to their target, then returns to restore for 12% missing Health."
+      },
+      "stats": {
+        "Damage": "90/130/600 (AP)"
+      }
+    },
+    {
+      "name": "Xayah",
+      "type": "Attack Marksman",
+      "traits": ["Ragewing", "Swiftshot"],
+      "cost": 4,
+      "ability": {
+        "name": "Feathers FLY!",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "For 4 seconds, attacks leave a feather behind the target and 2/2/4 nearby enemies. At the end of this duration, recall all feathers, dealing 23/33/100 (ADAP) physical damage per feather to enemies struck."
+      },
+      "stats": {
+        "Bonus Feathers": "2/2/4",
+        "Damage": "12/17/40 (AD) + 11/16/60 (AP)",
+        "Total Recall Damage": "23/33/100"
+      }
+    },
+    {
+      "name": "Diana",
+      "type": "Magic Fighter",
+      "traits": ["Scalescorn", "Assassin"],
+      "cost": 3,
+      "ability": {
+        "name": "Pale Cascade",
+        "mana_start": 15,
+        "mana_max": 45,
+        "description": "Gain a 300/350/400 (AP) Shield over 6 seconds and summon 5/6/7 orbs to orbit. These orbs explode for 85/105/115 (AP) magic damage when they hit an enemy, refreshing the Shield when the final orb explodes."
+      }
+    },
+    {
+      "name": "Heimerdinger",
+      "type": "Magic Caster",
+      "traits": ["Mage"],
+      "cost": 3,
+      "ability": {
+        "name": "Egg Toss",
+        "mana_start": 50,
+        "mana_max": 100,
+        "description": "Heimerdinger lobs an egg at the highest percent Health enemy, dealing 225/325/475 magic damage and stunning them for 0.5 seconds."
+      }
+    },
+    {
+      "name": "Lee Sin",
+      "type": "Magic Fighter",
+      "traits": ["Tempest", "Dragonmancer"],
+      "cost": 3,
+      "ability": {
+        "name": "Dragon's Rage",
+        "mana_start": 15,
+        "mana_max": 45,
+        "description": "Kick the target, Stunning them for 1.25 seconds and knocking them back. The target and all enemies hit take 215/325/425 (AP) magic damage. 20% Shred damaged enemies for 5 seconds."
+      },
+      "stats": {
+        "Shred": "Reduce Magic Resist",
+        "Damage": "215/325/425 (AP)"
+      }
+    },
+    {
+      "name": "Lulu",
+      "type": "Magic Caster",
+      "traits": ["Evoker"],
+      "cost": 3,
+      "ability": {
+        "name": "Whimsy",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Enchant the 3 closest allies or enemies. Enchanted allies gain @ModifiedAttackSpeedPercent@ (AP) bonus Attack Speed for 5 seconds. Enchanted enemies are Stunned and transformed into a docile feline for 1 seconds, taking 20% increased damage."
+      }
+    },
+    {
+      "name": "Nomsy (Mage)",
+      "type": "Magic Caster",
+      "traits": ["Prodigy", "Dragon", "Mage"],
+      "cost": 3,
+      "ability": {
+        "name": "Fireballs!",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Lob a fireball towards a random enemy that explodes on impact, dealing 190/285/455 (AP) magic damage to enemies within 1 hex, and bouncing additional fireballs that deal 30/35/40% of the damage."
+      }
+    },
+    {
+      "name": "Nomsy (Cannoneer)",
+      "type": "Magic Caster",
+      "traits": ["Prodigy", "Dragon", "Cannoneer"],
+      "cost": 3,
+      "ability": {
+        "name": "Fireballs!",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Lob a fireball towards a random enemy that explodes on impact, dealing 190/285/455 (AP) magic damage to enemies within 1 hex, and bouncing additional fireballs that deal 30/35/40% of the damage."
+      }
+    },
+    {
+      "name": "Nomsy (Evoker)",
+      "type": "Magic Caster",
+      "traits": ["Prodigy", "Dragon", "Evoker"],
+      "cost": 3,
+      "ability": {
+        "name": "Fireballs!",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Lob a fireball towards a random enemy that explodes on impact, dealing 190/285/455 (AP) magic damage to enemies within 1 hex, and bouncing additional fireballs that deal 30/35/40% of the damage."
+      }
+    },
+    {
+      "name": "Nunu & Willump",
+      "type": "Magic Tank",
+      "traits": ["Mirage", "Cavalier"],
+      "cost": 3,
+      "ability": {
+        "name": "Consume",
+        "mana_start": 30,
+        "mana_max": 90,
+        "description": "Bite the target, dealing 425/640/1020 (AP) magic damage. If the target has less Health than Nunu & Willump prior to the bite, deal an additional 50% damage."
+      }
+    },
+    {
+      "name": "Olaf",
+      "type": "Attack Fighter",
+      "traits": ["Scalescorn", "Bruiser", "Warrior"],
+      "triple_trait": true,
+      "cost": 3,
+      "ability": {
+        "name": "Recklessness",
+        "mana_start": 20,
+        "mana_max": 40,
+        "description": "Deal 90/135/215 (AD) physical damage and gain 35%/45%/55% (AP) Attack Speed for 5 seconds. If below 50% Health, the Attack Speed is doubled."
+      },
+      "stats": {
+        "Passive": "Permanently gain 4% AD Attack Damage after each death. (Current Bonus: X AD Attack Damage.)"
+      }
+    },
+    {
+      "name": "Rakan",
+      "type": "Magic Tank",
+      "traits": ["Ragewing", "Guardian", "Mystic"],
+      "triple_trait": true,
+      "cost": 3,
+      "ability": {
+        "name": "Disarming Diversion",
+        "mana_start": 15,
+        "mana_max": 75,
+        "description": "Dash to the furthest enemy within 2 hexes, Stunning all units passed through for 1.5 seconds, and Taunting the target. Then, gain a 230/350/650 (AP) Shield for 4 seconds. Attacks grant an additional 50/70/100 (AP) Shield."
+      },
+      "stats": {
+        "Shield Amount": "230/350/650 (AP)",
+        "Disarm Duration": "1.5",
+        "Bonus Shield": "50/70/100 (AP)"
+      }
+    },
+    {
+      "name": "Rengar",
+      "type": "Attack Fighter",
+      "traits": ["Darkflight", "Assassin"],
+      "cost": 3,
+      "ability": {
+        "name": "Unseen Predator",
+        "mana_start": 30,
+        "mana_max": 60,
+        "description": "Leap to the lowest Armor enemy, deal 230/340/535 (AD%AP) physical damage, then gain 200% Attack Speed for 2 attacks."
+      },
+      "stats": {
+        "Damage": "170/260/435 (AD) + 60/80/100 (AP)",
+        "Total Damage": "230/340/535"
+      }
+    },
+    {
+      "name": "Seraphine",
+      "type": "Magic Caster",
+      "traits": ["Lagoon", "Evoker", "Mystic"],
+      "triple_trait": true,
+      "cost": 3,
+      "ability": {
+        "name": "Serenade of the Seas",
+        "mana_start": 40,
+        "mana_max": 80,
+        "description": "Grant 140/180/260 (AP) Shield and 20/30/50 (AP) bonus magic damage on-attack to allies within 2 hexes for 4 seconds."
+      },
+      "stats": {
+        "Shield": "140/180/260 (AP)",
+        "Damage": "20/30/50 (AP)"
+      }
+    },
+    {
+      "name": "Sylas",
+      "type": "Magic Tank",
+      "traits": ["Whispers", "Mage", "Bruiser"],
+      "triple_trait": true,
+      "cost": 3,
+      "ability": {
+        "name": "Petricite Burst",
+        "mana_start": 20,
+        "mana_max": 60,
+        "description": "Deal 140/200/320 (AP) magic damage to nearby enemies and gain 365/415/525 (AP) Shield for 6 seconds. If Shield is already active, hit a larger area and 30% Mana Reave enemies struck."
+      },
+      "stats": {
+        "Damage": "140/200/320 (AP)",
+        "Shield": "365/415/525 (AP)"
+      }
+    },
+    {
+      "name": "Tristana",
+      "type": "Attack Caster",
+      "traits": ["Cannoneer"],
+      "cost": 3,
+      "ability": {
+        "name": "Explosive Charge",
+        "mana_start": 50,
+        "mana_max": 100,
+        "description": "Tristana fires up to 1 explosive charges, prioritizing the closest targets without a charge. Charges detonate after 1 seconds, dealing @TotalDamage@ physical damage (@PercentAD*100@% Attack Damage AD) to nearby enemies and an additional @ModifiedDamage@ magic damage to the target."
+      }
+    },
+    {
+      "name": "Varus",
+      "type": "Hybrid Caster",
+      "traits": ["Astral", "Swiftshot"],
+      "cost": 3,
+      "ability": {
+        "name": "Chain of Constellations",
+        "mana_start": 0,
+        "mana_max": 110,
+        "description": "Shoot a tendril towards the current target, dealing 170/255/475 (AD) physical damage to the first enemy hit and Stunning them for 1 seconds. It then spreads to 3 nearby enemies, dealing 155/255/405 (AP) magic damage and Stunning them for the same duration."
+      }
+    },
+    {
+      "name": "Volibear",
+      "type": "Magic Fighter",
+      "traits": ["Shimmerscale", "Dragonmancer"],
+      "cost": 3,
+      "ability": {
+        "name": "Relentless Storm",
+        "mana_start": 0,
+        "mana_max": 40,
+        "description": "Gain 400/700/1100 max Health. For the rest of combat, every 3rd attack deals 75/115/210 (AP) bonus magic damage to the target, and 75/115/210 (AP) magic damage to up to 4 additional enemies."
+      },
+      "stats": {
+        "Bonus Health": "400/700/1100",
+        "Damage": "75/115/210 (AP)"
+      }
+    },
+    {
+      "name": "Zeri",
+      "type": "Attack Caster",
+      "traits": ["Lagoon", "Cannoneer"],
+      "cost": 3,
+      "ability": {
+        "name": "Watershock Laser",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Fire a water pulse at the closest enemy within 3 hexes, or at the centermost enemy, Stunning them for 0.75 seconds. When the pulse explodes it deals 70/110/175 (AD) physical damage and creates a laser behind the target that deals 275/375/525 (AP) magic damage to all enemies hit."
+      },
+      "stats": {
+        "Damage": "70/110/175 (AD)",
+        "Laser Damage": "275/375/525 (AP)"
+      }
+    },
+    {
+      "name": "Zippy",
+      "type": "Attack Fighter",
+      "traits": ["Guild", "Dragon"],
+      "cost": 3,
+      "ability": {
+        "name": "Somersault Assault",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Gain 375/450/650 (AP) Shield for 2 seconds and deal 340/540/1050 (AD) physical damage to the highest percent health enemy, Stunning and knocking them back slightly."
+      }
+    },
+    {
+      "name": "Aphelios",
+      "type": "Attack Caster",
+      "traits": ["Darkflight", "Cannoneer"],
+      "cost": 2,
+      "ability": {
+        "name": "Binding Eclipse",
+        "mana_start": 0,
+        "mana_max": 90,
+        "description": "Fires 5/5/7 (AP) bolts in a cone, each dealing 195/315/505 (AD) physical damage. Enemies only take damage from one bolt. Then, Stun all enemies hit for 1 second(s)."
+      }
+    },
+    {
+      "name": "Braum",
+      "type": "Magic Tank",
+      "traits": ["Scalescorn", "Guardian"],
+      "cost": 2,
+      "ability": {
+        "name": "Unbreakable",
+        "mana_start": 40,
+        "mana_max": 70,
+        "description": "Raise shield against the largest group of enemies for 4 seconds, gaining 70%/75%/85% (AP) Durability against damage from that direction."
+      }
+    },
+    {
+      "name": "Gnar",
+      "type": "Attack Fighter",
+      "traits": ["Jade", "Shapeshifter"],
+      "cost": 2,
+      "ability": {
+        "name": "Mega Gnar",
+        "mana_start": 0,
+        "mana_max": 40,
+        "description": "Jump to the current target and Stun nearby enemies for 1 second. Gain 95/105/115% Attack Damage and 40/60/90 Armor, but reduce Attack Range to 1 hex."
+      },
+      "stats": {
+        "Attack Damage": "95/105/115%",
+        "Armor": "40/60/90"
+      }
+    },
+    {
+      "name": "Jax",
+      "type": "Magic Tank",
+      "traits": ["Jade", "Shimmerscale", "Bruiser"],
+      "triple_trait": true,
+      "cost": 2,
+      "ability": {
+        "name": "Counter Strike",
+        "mana_start": 0,
+        "mana_max": 70,
+        "description": "Dodge all incoming attacks for 2 seconds. Then, deal 225/350/750 (AP) magic damage to all nearby enemies and Stun them for 1/1.25/1.5 second(s)."
+      },
+      "stats": {
+        "Damage": "225/350/750 (AP)",
+        "Stun Duration": "1/1.25/1.5"
+      }
+    },
+    {
+      "name": "Kai'Sa",
+      "type": "Magic Caster",
+      "traits": ["Lagoon", "Dragonmancer"],
+      "cost": 2,
+      "ability": {
+        "name": "Tidal Burst",
+        "mana_start": 0,
+        "mana_max": 45,
+        "description": "Fire 4 missiles split between the current target and up to 2 other targets within attack range, each dealing 45/65/100 (AP) magic damage. Increase by 2 missiles each cast, up to 12."
+      }
+    },
+    {
+      "name": "Lillia",
+      "type": "Magic Fighter",
+      "traits": ["Scalescorn", "Cavalier", "Mage"],
+      "triple_trait": true,
+      "cost": 2,
+      "ability": {
+        "name": "Watch Out!",
+        "mana_start": 0,
+        "mana_max": 30,
+        "description": "Deal 215/275/370 (AP) magic damage spread amongst the target and all enemies within a 1-hex radius, plus 180/230/330 (AP) bonus magic damage to the target."
+      }
+    },
+    {
+      "name": "Lux",
+      "type": "Magic Caster",
+      "traits": ["Astral", "Mage"],
+      "cost": 2,
+      "ability": {
+        "name": "Cosmic Flare",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Fire a star at the farthest enemy, dealing 325/410/525 (AP) magic damage to the first enemy hit and 175/210/240 (AP) magic damage to subsequent enemies."
+      },
+      "stats": {
+        "Damage": "325/410/525 (AP)",
+        "Secondary Damage": "175/210/240 (AP)"
+      }
+    },
+    {
+      "name": "Qiyana",
+      "type": "Magic Fighter",
+      "traits": ["Tempest", "Assassin"],
+      "cost": 2,
+      "ability": {
+        "name": "Elemental Blade",
+        "mana_start": 15,
+        "mana_max": 45,
+        "description": "Dash to the best position to strike enemies with a blade, dealing 185/280/415 (AP) magic damage in a short line through the target and Disarming them for 1.5/1.75/2 seconds."
+      }
+    },
+    {
+      "name": "Rell",
+      "type": "Magic Tank",
+      "traits": ["Darkflight", "Cavalier"],
+      "cost": 2,
+      "ability": {
+        "name": "Iron Bond",
+        "mana_start": 0,
+        "mana_max": 70,
+        "description": "Tether to the lowest percent Health ally, dealing 160/240/440 (AP) magic damage to all enemies between. Gain 35/40/50% of current Armor and Magic Resist, and grant the same amount to the bound ally for 4 seconds."
+      },
+      "stats": {
+        "Bonus Armor and Magic Resist": "35/40/50",
+        "Damage": "160/240/440 (AP)"
+      }
+    },
+    {
+      "name": "Twitch",
+      "type": "Attack Caster",
+      "traits": ["Guild", "Swiftshot"],
+      "cost": 2,
+      "ability": {
+        "name": "Blast Potion",
+        "mana_start": 40,
+        "mana_max": 80,
+        "description": "Deal 130/210/345 (ADAP) physical damage to enemies in a 1-hex radius centered on the target and 20% Sunder them for 5 seconds."
+      },
+      "stats": {
+        "Sunder": "Reduce Armor",
+        "Damage": "90/130/195 (AD) + 40/80/150 (AP)",
+        "Total Damage": "130/210/345"
+      }
+    },
+    {
+      "name": "Yone",
+      "type": "Attack Fighter",
+      "traits": ["Mirage", "Warrior"],
+      "cost": 2,
+      "ability": {
+        "name": "Way of the Hunter",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "Attacks alternate between dealing 85/125/180 (AP) bonus magic damage and dealing 15/30/50 (AD) bonus physical damage."
+      },
+      "stats": {
+        "Magic Damage": "85/125/180 (AP)",
+        "Physical Damage": "15/30/50 (AD)"
+      }
+    },
+    {
+      "name": "Zac",
+      "type": "Magic Tank",
+      "traits": ["Lagoon", "Guardian"],
+      "cost": 2,
+      "ability": {
+        "name": "Unstable Current",
+        "mana_start": 20,
+        "mana_max": 75,
+        "description": "Restore 250/285/340 (AP) Health and explode outwards towards enemies within 2 hexes, dealing 10%/12%/18% of their max Health as magic damage."
+      },
+      "stats": {
+        "Heal": "250/285/340 (AP)",
+        "Max Health Damage": "10/12/18%"
+      }
+    },
+    {
+      "name": "Zyra",
+      "type": "Magic Caster",
+      "traits": ["Whispers", "Evoker"],
+      "cost": 2,
+      "ability": {
+        "name": "Grasping Spines",
+        "mana_start": 0,
+        "mana_max": 70,
+        "description": "Summon vines in the row with the most enemies, dealing 225/325/550 (AP) magic damage and Stunning them for 1 second(s)."
+      },
+      "stats": {
+        "Damage": "225/325/550 (AP)",
+        "Stun Duration": "1"
+      }
+    },
+    {
+      "name": "Ezreal",
+      "type": "Magic Caster",
+      "traits": ["Tempest", "Swiftshot"],
+      "cost": 1,
+      "ability": {
+        "name": "Mystic Shot",
+        "mana_start": 0,
+        "mana_max": 40,
+        "description": "Fire an energy bolt towards the target, dealing 190/285/430 (AP) magic damage to the first enemy hit. Gain 10% (AP) Attack Speed, stacking up to 5 times."
+      }
+    },
+    {
+      "name": "Jade Krug",
+      "type": "Attack Tank",
+      "traits": [],
+      "cost": 1,
+      "ability": {
+        "name": "Jadesplosion",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Deals its Jade explosion damage around it."
+      }
+    },
+    {
+      "name": "Karma",
+      "type": "Magic Caster",
+      "traits": ["Jade", "Dragonmancer"],
+      "cost": 1,
+      "ability": {
+        "name": "Inner Flame",
+        "mana_start": 0,
+        "mana_max": 40,
+        "description": "Fire a burst of energy towards the current target, dealing 200/265/380 (AP) magic damage in a 1-hex radius centered on the first enemy hit."
+      },
+      "stats": {
+        "Damage": "200/265/380 (AP)"
+      }
+    },
+    {
+      "name": "Leona",
+      "type": "Magic Tank",
+      "traits": ["Mirage", "Guardian"],
+      "cost": 1,
+      "ability": {
+        "name": "Solar Barrier",
+        "mana_start": 10,
+        "mana_max": 50,
+        "description": "Create a surrounding barrier that reduces all incoming damage by 25/35/60 (AP) for 4 seconds."
+      },
+      "stats": {
+        "Damage Reduction": "25/35/60 (AP)"
+      }
+    },
+    {
+      "name": "Malphite",
+      "type": "Magic Tank",
+      "traits": ["Lagoon", "Bruiser"],
+      "cost": 1,
+      "ability": {
+        "name": "Coral Shield",
+        "mana_start": 50,
+        "mana_max": 50,
+        "description": "Gain 270/376/552 (HealthAP) Shield for 5 seconds."
+      },
+      "stats": {
+        "Shield": "270/376/552 (10% Health + 200/250/325 AP)"
+      }
+    },
+    {
+      "name": "Nasus",
+      "type": "Magic Tank",
+      "traits": ["Shimmerscale", "Guardian"],
+      "cost": 1,
+      "ability": {
+        "name": "Fury of the Dawn",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Gain 225/350/650 max Health for 6 seconds, dealing 70/100/205 (AP) magic damage to adjacent enemies every second."
+      }
+    },
+    {
+      "name": "Nidalee",
+      "type": "Attack Fighter",
+      "traits": ["Astral", "Shapeshifter"],
+      "cost": 1,
+      "ability": {
+        "name": "Primal Surge",
+        "mana_start": 0,
+        "mana_max": 30,
+        "description": "Transform into Cougar Form for the rest of combat, reducing Attack Range to 1 and gaining bonus movement speed and 40%/45%/50% (AP) Attack Speed. While in Cougar Form, every 3rd attack swipes the target for 115/175/260 (AD) physical damage."
+      }
+    },
+    {
+      "name": "Sejuani",
+      "type": "Magic Tank",
+      "traits": ["Guild", "Cavalier"],
+      "cost": 1,
+      "ability": {
+        "name": "Warrior's Wrath",
+        "mana_start": 30,
+        "mana_max": 80,
+        "description": "Deal 42/76/136 (HealthAP) magic damage to enemies in a cone. Then repeat the damage on the target and the enemy directly behind, Stunning them for 1.5/1.75/2 seconds."
+      },
+      "stats": {
+        "Stun Duration": "1.5/1.75/2",
+        "Damage": "42/76/136 (600% Health + AP)"
+      }
+    },
+    {
+      "name": "Senna",
+      "type": "Attack Caster",
+      "traits": ["Ragewing", "Cannoneer"],
+      "cost": 1,
+      "ability": {
+        "name": "Last Embrace",
+        "mana_start": 15,
+        "mana_max": 75,
+        "description": "Launch mist toward the farthest enemy, dealing 100/180/340 (AD) physical damage in a 1-hex radius centered on the first enemy hit, plus 300/450/650 (AP) bonus magic damage to the target."
+      },
+      "stats": {
+        "Physical Damage": "100/180/340 (AD)",
+        "Magic Damage": "300/450/650 (AP)"
+      }
+    },
+    {
+      "name": "Sett",
+      "type": "Attack Fighter",
+      "traits": ["Ragewing", "Dragonmancer"],
+      "cost": 1,
+      "ability": {
+        "name": "Knuckle Down",
+        "mana_start": 30,
+        "mana_max": 60,
+        "description": "For 4 seconds, gain 50/60/80 (AP) Armor and Magic Resist. Every other punch deals 90/135/205 (AD) bonus physical damage."
+      }
+    },
+    {
+      "name": "Skarner",
+      "type": "Magic Tank",
+      "traits": ["Astral", "Bruiser"],
+      "cost": 1,
+      "ability": {
+        "name": "Crystalline Exoskeleton",
+        "mana_start": 10,
+        "mana_max": 50,
+        "description": "Gain 300/375/450 (AP) Shield for 8 seconds and 160/180/200% Attack Speed while it holds."
+      },
+      "stats": {
+        "Shield Amount": "300/375/450 (AP)",
+        "Attack Speed": "160/180/200%"
+      }
+    },
+    {
+      "name": "Taliyah",
+      "type": "Magic Caster",
+      "traits": ["Lagoon", "Mage"],
+      "cost": 1,
+      "ability": {
+        "name": "Flowing Volley",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Throw 3 stones towards the current target, each dealing 170/255/385 (AP) magic damage to the first enemy hit."
+      }
+    },
+    {
+      "name": "Vladimir",
+      "type": "Magic Tank",
+      "traits": ["Astral", "Mage"],
+      "cost": 1,
+      "ability": {
+        "name": "Transfusion",
+        "mana_start": 0,
+        "mana_max": 70,
+        "description": "Heal 275/325/375 (AP) and deal 275/325/375 (AP) magic damage to the target."
+      },
+      "stats": {
+        "Damage": "275/325/375 (AP)",
+        "Heal": "275/325/375 (AP)"
+      }
+    },
+    {
+      "name": "Wukong",
+      "type": "Attack Fighter",
+      "traits": ["Jade", "Warrior"],
+      "cost": 1,
+      "ability": {
+        "name": "Crushing Blow",
+        "mana_start": 0,
+        "mana_max": 30,
+        "description": "Deal 170/270/465 (ADAP) physical damage to the target and Stun them for 1/1.25/1.5 second(s)."
+      },
+      "stats": {
+        "Damage": "120/195/365 (AD) + 50/75/100 (AP)",
+        "Total Damage": "170/270/465",
+        "Stun Duration": "1/1.25/1.5"
+      }
+    }
+  ]
+}

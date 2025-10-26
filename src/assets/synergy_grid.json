@@ -1,0 +1,346 @@
+{
+  "classes": [
+    {
+      "name": "Assassin",
+      "description": "Innate: Leap to the enemy backline when combat starts. Assassins' Abilities can critically strike and they gain bonus Critical Strike Chance and bonus Critical Strike Damage.",
+      "champions": ["Diana", "Nilah", "Qiyana", "Rengar"],
+      "bonuses": {
+        "2": "20% Crit Chance & 10% Crit Damage",
+        "4": "50% Crit Chance & 25% Crit Damage",
+        "6": "75% Crit Chance & 75% Crit Damage"
+      }
+    },
+    {
+      "name": "Bruiser",
+      "description": "Your team gains bonus maximum Health. Bruisers gain double this bonus.",
+      "champions": ["Jax", "Malphite", "Olaf", "Skarner", "Syfen", "Sylas"],
+      "bonuses": {
+        "2": "180 Health",
+        "4": "375 Health",
+        "6": "700 Health",
+        "8": "1500 Health"
+      }
+    },
+    {
+      "name": "Cannoneer",
+      "description": "Every 5th attack fires a cannon shot that explodes for physical damage around the target.",
+      "champions": ["Aphelios", "Graves", "Senna", "Tristana", "Zeri"],
+      "bonuses": {
+        "2": "150% Attack Damage",
+        "4": "275% Attack Damage",
+        "6": "450% Attack Damage"
+      }
+    },
+    {
+      "name": "Cavalier",
+      "description": "Innate: Charge quickly towards their target whenever they move. Cavaliers gain Armor and Magic Resist. At the start of combat and after each charge, gain 200% the amount for 4 seconds.",
+      "champions": ["Hecarim", "Lillia", "Nunu", "Rell", "Sejuani"],
+      "bonuses": {
+        "2": "35 Armor, 35 Magic Resist",
+        "3": "50 Armor, 50 Magic Resist",
+        "4": "65 Armor, 65 Magic Resist",
+        "5": "85 Armor, 85 Magic Resist",
+        "6": "110 Armor, 110 Magic Resist"
+      }
+    },
+    {
+      "name": "Dragon",
+      "description": "Innate: Require 2 team slots. Dragons provide +3 to the marked trait, and gain additional bonuses based on how many Dragons are on your team.",
+      "champions": [
+        "Ao Shin",
+        "Aurelion Sol",
+        "Daeja",
+        "Idas",
+        "Nomsy",
+        "Shi Oh Yu",
+        "Shyvana",
+        "Sohm",
+        "Swain",
+        "Syfen",
+        "Terra",
+        "Zippy"
+      ],
+      "bonuses": {
+        "1": "500 bonus Health",
+        "2": "and 20 Armor and Magic Resist",
+        "3": "and 10% bonus damage",
+        "4": "and +1 to team size",
+        "5": "and heal 40 Health every second",
+        "6": "and will cause your Dragons to ascend!"
+      }
+    },
+    {
+      "name": "Dragonmancer",
+      "description": "Use the Dragonmancer Blessing item to choose a Hero. The Hero gains massively increased Health and Ability Power, which increases by 20% per star level of your Dragonmancers.",
+      "champions": ["Kaisa", "Karma", "Lee Sin", "Sett", "Volibear", "Yasuo"],
+      "bonuses": {
+        "2": "275 Health, +25 Ability Power",
+        "4": "650 Health, +40 Ability Power",
+        "6": "850 Health, +50 Ability Power",
+        "8": "1000 Health, +70 Ability Power"
+      }
+    },
+    {
+      "name": "Evoker",
+      "description": "Evokers gain Mana whenever an ally or enemy casts an Ability.",
+      "champions": ["Aurelion Sol", "Lulu", "Seraphine", "Zyra"],
+      "bonuses": {
+        "2": "5 Mana",
+        "3": "8 Mana",
+        "4": "10 Mana"
+      }
+    },
+    {
+      "name": "Guardian",
+      "description": "Once per combat at 50% Health, Guardians shield themselves and their closest ally for a percent of their maximum Health. Shields stack!",
+      "champions": ["Braum", "Idas", "Leona", "Nasus", "Rakan", "Zac"],
+      "bonuses": {
+        "2": "25% of max health shield",
+        "4": "40% of max health shield",
+        "6": "80% of max health shield",
+        "8": "130% of max health shield"
+      }
+    },
+    {
+      "name": "Mage",
+      "description": "Mages cast twice and have modified total Ability Power.",
+      "champions": [
+        "Heimerdinger",
+        "Lillia",
+        "Lux",
+        "Sohm",
+        "Sylas",
+        "Taliyah",
+        "Vladimir",
+        "Zoe"
+      ],
+      "bonuses": {
+        "3": "80% Ability Power",
+        "5": "105% Ability Power",
+        "7": "135% Ability Power",
+        "9": "195% Ability Power"
+      }
+    },
+    {
+      "name": "Mystic",
+      "description": "Your team gains Magic Resist.",
+      "champions": ["Bard", "Rakan", "Seraphine", "Shi Oh Yu"],
+      "bonuses": {
+        "2": "40 Magic Resist",
+        "3": "80 Magic Resist",
+        "4": "150 Magic Resist",
+        "5": "300 Magic Resist"
+      }
+    },
+    {
+      "name": "Shapeshifter",
+      "description": "Transforming grants bonus maximum Health.",
+      "champions": ["Gnar", "Jayce", "Nidalee", "Shyvana"],
+      "bonuses": {
+        "2": "60% maximum Health",
+        "4": "150% maximum Health"
+      }
+    },
+    {
+      "name": "Swiftshot",
+      "description": "Innate: gain 2 hex Attack Range. Swiftshots gain Attack Speed for each hex between themselves and their target.",
+      "champions": ["Ezreal", "Twitch", "Varus", "Xayah"],
+      "bonuses": {
+        "2": "10% Attack Speed",
+        "3": "15% Attack Speed",
+        "4": "25% Attack Speed",
+        "5": "40% Attack Speed"
+      }
+    },
+    {
+      "name": "Warrior",
+      "description": "Warrior attacks have a 50% chance to increase the damage of their next attack.",
+      "champions": ["Olaf", "Pantheon", "Wukong", "Yasuo", "Yone"],
+      "bonuses": {
+        "2": "75% damage",
+        "4": "150% damage",
+        "6": "275% damage"
+      }
+    },
+    {
+      "name": "Starcaller",
+      "description": "Unique trait for Soraka.",
+      "champions": ["Soraka"],
+      "bonuses": {
+        "1": "The first Starcaller to cast their Ability during player combat heals you for (2/3/75) Tactician damage, depending on their star level. Excess healing disintegrates an enemy champion."
+      }
+    },
+    {
+      "name": "Bard",
+      "description": "Unique trait for Bard.",
+      "champions": ["Bard"],
+      "bonuses": {
+        "1": "Allies that survive player combat have a 2% chance to create a Doot. Bard always creates a Doot when dancing. Each Doot you collect increases your Shop odds for higher-tier champions by 1%."
+      }
+    },
+    {
+      "name": "Spell Thief",
+      "description": "Unique trait for Zoe.",
+      "champions": ["Zoe"],
+      "bonuses": {
+        "1": "Zoe nabs a new Ability after each cast and at the start of every round."
+      }
+    }
+  ],
+  "origins": [
+    {
+      "name": "Astral",
+      "description": "After each player combat, gain an Astral Orb. The combined star level of your Astral champions increases the quality of the orb. Astral champions gains bonus Ability Power.",
+      "champions": [
+        "Aurelion Sol",
+        "Lux",
+        "Nidalee",
+        "Skarner",
+        "Varus",
+        "Vladimir"
+      ],
+      "bonuses": {
+        "3": "5 Ability Power",
+        "5": "30 Ability Power",
+        "8": "75 Ability Power"
+      }
+    },
+    {
+      "name": "Darkflight",
+      "description": "The unit in the Darkflight hex is sacrificed at start of combat, granting a copy of a random item they have to each Darkflight champion, and bonus health to each. Non-craftable items and Emblems are corrupted when they're copied, instead becoming Darkflight Essence.",
+      "champions": ["Aphelios", "Rell", "Rengar", "Swain"],
+      "bonuses": {
+        "2": "500 Health",
+        "4": "750 Health",
+        "6": "1000 Health",
+        "8": "1600 Health"
+      }
+    },
+    {
+      "name": "Guild",
+      "description": "Grant a unique bonus to your team; Guild members gain double the amount. Increases for each Guild member in play! Sejuani: +130 Health Twitch: +11% Attack Speed Zippy: +8 Armor and Magic Resist Jayce: +5 Attack Damage and Ability Power Bard: +2 Mana per attack Emblem: +3% Omnivamp",
+      "champions": ["Bard", "Jayce", "Sejuani", "Twitch", "Zippy"],
+      "bonuses": {
+        "1": "100% Guild bonus",
+        "2": "110% Guild bonus",
+        "3": "120% Guild bonus",
+        "4": "130% Guild bonus",
+        "5": "140% Guild bonus",
+        "6": "150% Guild bonus",
+        "7": "160% Guild bonus",
+        "8": "175% Guild bonus"
+      }
+    },
+    {
+      "name": "Jade",
+      "description": "Summon movable Jade Statues that grow in power. Each combat, allies who start combat adjacent to a statue gain maximum Health healing every 2 seconds and bonus Attack Speed. When a statue is destroyed, it deals 33% of its Health as magic damage to nearby enemies.",
+      "champions": ["Gnar", "Jax", "Karma", "Shi Oh Yu", "Soraka", "Wukong"],
+      "bonuses": {
+        "3": "1 statue, +2% healing, +10% Attack Speed",
+        "5": "2 statues, +3% healing, +22% Attack Speed",
+        "7": "3 statues, +5% healing, +55% Attack Speed",
+        "9": "4 statues, +8% healing, +88% Attack Speed"
+      }
+    },
+    {
+      "name": "Lagoon",
+      "description": "Summon a Seastone. The Seastone grants loot based on the number of ability casts by Lagoon champions over time. Lagoon champions also gain Ability Power and Attack Speed.",
+      "champions": [
+        "Kaisa",
+        "Malphite",
+        "Nilah",
+        "Seraphine",
+        "Sohm",
+        "Taliyah",
+        "Zac",
+        "Zeri"
+      ],
+      "bonuses": {
+        "3": "8 Ability Power, 8% Attack Speed",
+        "6": "30 Ability Power, 30% Attack Speed",
+        "9": "55 Ability Power, 55% Attack Speed",
+        "12": "200 Ability Power, 200% Attack Speed"
+      }
+    },
+    {
+      "name": "Mirage",
+      "description": "Mirage champions gain a different Trait bonus from game to game. Electric Overload: When attacking or being hit by an attack, gain a chance to deal 8% of their maximum Health as magic damage to adjacent enemies. Warlord's Honor: After winning any combat, gain bonus Health and Ability Power. Increases by 10% per win, stacks up to 5 times! Pirate's Greed: Gain a chest of loot after each player combat. Dawnbringer's Determination: Once per combat, rapidly heal at 50% Health. Executioner's Edge: Always critically strike low Heath targets with Attacks and Abilities. Gain bonus Critial Strike Damage. Spellsword's Enchantment: Each player combat, gain Ability Power per attack. Duelist's Dexterity: Innate: Mirage units move faster. Attacks grant bonus Attack Speed, up to 10 stacks.",
+      "champions": ["Daeja", "Leona", "Nunu", "Yasuo", "Yone"],
+      "bonuses": {
+        "2": "??? (Randomly selected per game)",
+        "4": "??? (Randomly selected per game)",
+        "6": "??? (Randomly selected per game)",
+        "8": "??? (Randomly selected per game)"
+      }
+    },
+    {
+      "name": "Ragewing",
+      "description": "Innate: Convert Mana to Rage; attacks generate 15 Rage. After casting an Ability, enrage for 4 seconds: 25% Attack Speed but can't gain Rage. Gain stats when enraged:",
+      "champions": ["Hecarim", "Rakan", "Senna", "Sett", "Shyvana", "Xayah"],
+      "bonuses": {
+        "2": "50% Attack Speed and 15% Omnivamp",
+        "4": "100% Attack Speed and 30% Omnivamp",
+        "6": "150% Attack Speed and 45% Omnivamp",
+        "8": "325% Attack Speed and 85% Omnivamp"
+      }
+    },
+    {
+      "name": "Scalescorn",
+      "description": "Scalescorns take 20% reduced damage from enemies with more than 1900 Health. They also deal a percent of their damage as additional magic damage.",
+      "champions": ["Braum", "Diana", "Lillia", "Olaf"],
+      "bonuses": {
+        "2": "15% magic damage",
+        "4": "50% magic damage",
+        "6": "90% magic damage"
+      }
+    },
+    {
+      "name": "Shimmerscale",
+      "description": "Grant exclusive random Shimmerscale items. You can remove Shimmerscale items by benching the holder.",
+      "champions": ["Idas", "Jax", "Nasus", "Volibear", "Zoe"],
+      "bonuses": {
+        "3": "1 unique item",
+        "5": "2 unique items",
+        "7": "4 unique items",
+        "9": "5 unique items, which includes Crown of Champions"
+      }
+    },
+    {
+      "name": "Tempest",
+      "description": "After 8 seconds, lightning strikes the battlefield. Enemies are stunned for 1 second and take a percent of their maximum Health as true damage. Then, Tempest champions deal increased damage.",
+      "champions": ["Ao Shin", "Ezreal", "Graves", "Lee Sin", "Qiyana"],
+      "bonuses": {
+        "2": "10% lightning, 10% unit damage",
+        "4": "20% lightning, 30% unit damage",
+        "6": "30% lightning, 60% unit damage",
+        "8": "45% lightning, 120% unit damage"
+      }
+    },
+    {
+      "name": "Whispers",
+      "description": "Whispers damage shrinks enemies, reducing their Armor and Magic Resist by 40% for 6 seconds. When they damage a shrunken enemy, Whispers gain stacking bonuses:",
+      "champions": ["Pantheon", "Syfen", "Sylas", "Zyra"],
+      "bonuses": {
+        "2": "1 Attack Damage and Ability Power",
+        "4": "3 Attack Damage and Ability Power",
+        "6": "7 Attack Damage and Ability Power"
+      }
+    },
+    {
+      "name": "Monolith",
+      "description": "Terra empowers hexes on the battlefield. Combat start: units standing in the hex at the start of combat gain Durability.",
+      "champions": ["Terra"],
+      "bonuses": {
+        "3": "3 hexes, 18% Durability"
+      }
+    },
+    {
+      "name": "Prodigy",
+      "description": "Nomsy gains a random trait each game. She summons a former Trainer to aid her in battle, who also gains this trait. Trainers' Ability Power is always equal to Nomsy's Ability Power. When Nomsy dies, Trainers gain 100% Attack Speed.",
+      "champions": ["Nomsy"],
+      "bonuses": {
+        "3": "Bonus Active"
+      }
+    }
+  ]
+}

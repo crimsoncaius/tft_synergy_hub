@@ -1,0 +1,26 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#1a1a2e" stroke="#0f3460" stroke-width="2"/>
+  
+  <!-- Hexagon border (TFT board aesthetic) -->
+  <polygon points="32,8 46,16 46,32 46,48 32,56 18,48 18,32 18,16" 
+           fill="none" 
+           stroke="#00d4ff" 
+           stroke-width="2"/>
+  
+  <!-- Inner connection nodes representing synergies -->
+  <circle cx="32" cy="32" r="4" fill="#00d4ff"/>
+  
+  <!-- Connected nodes representing synergy links -->
+  <circle cx="24" cy="24" r="3" fill="#00ff88"/>
+  <circle cx="40" cy="24" r="3" fill="#00ff88"/>
+  <circle cx="24" cy="40" r="3" fill="#00ff88"/>
+  <circle cx="40" cy="40" r="3" fill="#00ff88"/>
+  
+  <!-- Connection lines -->
+  <line x1="32" y1="32" x2="24" y2="24" stroke="#00ff88" stroke-width="1.5"/>
+  <line x1="32" y1="32" x2="40" y2="24" stroke="#00ff88" stroke-width="1.5"/>
+  <line x1="32" y1="32" x2="24" y2="40" stroke="#00ff88" stroke-width="1.5"/>
+  <line x1="32" y1="32" x2="40" y2="40" stroke="#00ff88" stroke-width="1.5"/>
+</svg>
+
