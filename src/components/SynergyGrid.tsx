@@ -18,6 +18,8 @@ import {
 import { Tooltip } from "./Tooltip";
 import { CustomTagInput } from "./CustomTagInput";
 import emblemsData from "../assets/emblems.json";
+import synergyDataRaw from "../assets/synergy_grid.json";
+import unitsDataRaw from "../assets/units.json";
 
 // Unit types in order of frequency
 const UNIT_TYPES = [
@@ -82,28 +84,28 @@ export const SynergyGrid: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [synergyResponse, unitsResponse, teamResponse] =
-          await Promise.all([
-            fetch("/src/assets/synergy_grid.json"),
-            fetch("/src/assets/units.json"),
-            fetch("/selected_team.txt").catch(() => null), // Handle file not found
-          ]);
+        // Load selected team from file
+        const teamResponse = await fetch("/selected_team.txt").catch(
+          () => null
+        ); // Handle file not found
 
-        const synergyJson = await synergyResponse.json();
-        const unitsJson = await unitsResponse.json();
-
-        setSynergyData(synergyJson);
-        setUnits(unitsJson.units);
-        setGridData(buildSynergyGrid(unitsJson.units, synergyJson));
+        setSynergyData(synergyDataRaw as unknown as SynergyData);
+        setUnits(unitsDataRaw.units as unknown as Unit[]);
+        setGridData(
+          buildSynergyGrid(
+            unitsDataRaw.units as unknown as Unit[],
+            synergyDataRaw as unknown as SynergyData
+          )
+        );
 
         // Create suggestions array for autocomplete (will be updated when champions are selected)
-        const championSuggestions = unitsJson.units.map(
-          (unit: Unit, index: number) => ({
-            id: index.toString(),
-            text: unit.name,
-            className: "",
-          })
-        );
+        const championSuggestions = (
+          unitsDataRaw.units as unknown as Unit[]
+        ).map((unit: Unit, index: number) => ({
+          id: index.toString(),
+          text: unit.name,
+          className: "",
+        }));
         setSuggestions(championSuggestions);
 
         // Load saved teams from localStorage
@@ -127,7 +129,7 @@ export const SynergyGrid: React.FC = () => {
           setSelectedChampions(new Set(championNames));
           setSelectedChampionTags(
             championNames.map((name, index) => {
-              const champion = unitsJson.units.find(
+              const champion = (unitsDataRaw.units as unknown as Unit[]).find(
                 (unit: Unit) => unit.name === name
               );
               return {
