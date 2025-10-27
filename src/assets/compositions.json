@@ -222,16 +222,7 @@
     },
     {
       "name": "Guild Zippy",
-      "units": [
-        "Jayce",
-        "Sejuani",
-        "Bard",
-        "Hecarim",
-        "Nunu & Willump",
-        "Lillia",
-        "Rell",
-        "Twitch"
-      ],
+      "units": ["Jayce", "Sejuani", "Bard", "Hecarim", "Zippy", "Twitch"],
       "tier": "A",
       "strategy": "lvl 7"
     },
