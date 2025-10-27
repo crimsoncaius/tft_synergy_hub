@@ -90,10 +90,21 @@ export function calculateActivatedSynergies(
     selectedChampions.has(unit.name)
   );
 
+  // Helper function to identify Nomsy variants and their special trait
+  const getNomsySpecialTrait = (unitName: string): string | null => {
+    if (unitName === "Nomsy (Mage)") return "Mage";
+    if (unitName === "Nomsy (Cannoneer)") return "Cannoneer";
+    if (unitName === "Nomsy (Evoker)") return "Evoker";
+    return null;
+  };
+
   // Count trait contributions from each champion
   selectedUnits.forEach((unit) => {
     // Check if unit is a Dragon - only Dragons triple-activate origin traits
     const isDragonUnit = unit.traits.includes("Dragon");
+
+    // Check if this is a Nomsy variant with a special trait
+    const nomsySpecialTrait = getNomsySpecialTrait(unit.name);
 
     unit.traits.forEach((trait) => {
       const isDragon = trait === "Dragon";
@@ -106,7 +117,14 @@ export function calculateActivatedSynergies(
         // Origins get triple weight ONLY if unit is a Dragon
         // The triple_trait property is just a flag, not what triggers triple activation
         const weight = isOriginTrait && isDragonUnit ? 3 : 1;
-        traitCounts[trait] = (traitCounts[trait] || 0) + weight;
+
+        const baseContribution = weight;
+
+        // If this is the special trait for a Nomsy variant, double it
+        const actualContribution =
+          nomsySpecialTrait === trait ? baseContribution * 2 : baseContribution;
+
+        traitCounts[trait] = (traitCounts[trait] || 0) + actualContribution;
       }
     });
   });

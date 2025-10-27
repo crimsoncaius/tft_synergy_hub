@@ -1,0 +1,344 @@
+{
+  "compositions": [
+    {
+      "name": "Scalescorn Olaf",
+      "units": [
+        "Olaf",
+        "Diana",
+        "Sylas",
+        "Nilah",
+        "Pantheon",
+        "Rakan",
+        "Braum",
+        "Lillia"
+      ],
+      "tier": "S",
+      "strategy": "lvl 7"
+    },
+    {
+      "name": "Tempest Nilah",
+      "units": [
+        "Nilah",
+        "Graves",
+        "Lee Sin",
+        "Ao Shin",
+        "Diana",
+        "Rengar",
+        "Qiyana",
+        "Ezreal"
+      ],
+      "tier": "S",
+      "strategy": "lvl 7"
+    },
+    {
+      "name": "Dragon Sy'fen",
+      "units": [
+        "Sy'fen",
+        "Shi Oh Yu",
+        "Pantheon",
+        "Soraka",
+        "Jayce",
+        "Gnar",
+        "Jax"
+      ],
+      "tier": "S",
+      "strategy": "lvl 7"
+    },
+    {
+      "name": "Tempest Lee Sin",
+      "units": [
+        "Lee Sin",
+        "Graves",
+        "Ao Shin",
+        "Qiyana",
+        "Yasuo",
+        "Volibear",
+        "Ezreal",
+        "Sett"
+      ],
+      "tier": "S",
+      "strategy": "lvl 7"
+    },
+    {
+      "name": "Guild Jayce",
+      "units": [
+        "Jayce",
+        "Shyvana",
+        "Gnar",
+        "Bard",
+        "Hecarim",
+        "Twitch",
+        "Nidalee",
+        "Sejuani"
+      ],
+      "tier": "S",
+      "strategy": "lvl 7"
+    },
+    {
+      "name": "Scalescorn Diana",
+      "units": [
+        "Diana",
+        "Rengar",
+        "Olaf",
+        "Nilah",
+        "Braum",
+        "Lillia",
+        "Qiyana",
+        "Rell"
+      ],
+      "tier": "S",
+      "strategy": "lvl 7"
+    },
+    {
+      "name": "Bruiser Sy'fen",
+      "units": [
+        "Sy'fen",
+        "Olaf",
+        "Sylas",
+        "Pantheon",
+        "Jax",
+        "Zyra",
+        "Malphite",
+        "Skarner"
+      ],
+      "tier": "S",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Tempest Graves",
+      "units": [
+        "Graves",
+        "Lee Sin",
+        "Hecarim",
+        "Nunu & Willump",
+        "Lillia",
+        "Qiyana",
+        "Rell",
+        "Ezreal",
+        "Sejuani"
+      ],
+      "tier": "S",
+      "strategy": "Fast 8"
+    },
+    {
+      "name": "Guild Xayah",
+      "units": [
+        "Xayah",
+        "Jayce",
+        "Hecarim",
+        "Bard",
+        "Rakan",
+        "Twitch",
+        "Sejuani",
+        "Sett"
+      ],
+      "tier": "S",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Scalescorn Olaf Diana",
+      "units": [
+        "Olaf",
+        "Diana",
+        "Braum",
+        "Yasuo",
+        "Pantheon",
+        "Sylas",
+        "Lillia",
+        "Yone"
+      ],
+      "tier": "S",
+      "strategy": "lvl 7"
+    },
+    {
+      "name": "Mage Sohm",
+      "units": [
+        "Sohm",
+        "Sylas",
+        "Zoe",
+        "Vladimir",
+        "Lillia",
+        "Lux",
+        "Malphite",
+        "Taliyah"
+      ],
+      "tier": "S",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Shimmerscale Graves",
+      "units": ["Graves", "Idas", "Zoe", "Volibear", "Soraka", "Jax", "Nasus"],
+      "tier": "S",
+      "strategy": "Fast 9"
+    },
+    {
+      "name": "Mystic Graves",
+      "units": [
+        "Graves",
+        "Seraphine",
+        "Pantheon",
+        "Zeri",
+        "Bard",
+        "Rakan",
+        "Zac",
+        "Zyra"
+      ],
+      "tier": "S",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Evoker Nomsy",
+      "units": [
+        "Nomsy (Evoker)",
+        "Seraphine",
+        "Rakan",
+        "Hecarim",
+        "Nunu & Willump",
+        "Lulu",
+        "Zyra"
+      ],
+      "tier": "S",
+      "strategy": "lvl 7"
+    },
+    {
+      "name": "Mirage Daeja Idas",
+      "units": ["Daeja", "Idas", "Yasuo", "Yone", "Nunu & Willump", "Leona"],
+      "tier": "S",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Whispers Sy'fen",
+      "units": [
+        "Sy'fen",
+        "Zyra",
+        "Pantheon",
+        "Sylas",
+        "Olaf",
+        "Seraphine",
+        "Jax"
+      ],
+      "tier": "A",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Guild Zippy",
+      "units": [
+        "Jayce",
+        "Sejuani",
+        "Bard",
+        "Hecarim",
+        "Nunu & Willump",
+        "Lillia",
+        "Rell",
+        "Twitch"
+      ],
+      "tier": "A",
+      "strategy": "lvl 7"
+    },
+    {
+      "name": "Mirage Daeja Yone",
+      "units": [
+        "Daeja",
+        "Yone",
+        "Nunu & Willump",
+        "Pantheon",
+        "Olaf",
+        "Leona",
+        "Wukong"
+      ],
+      "tier": "A",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Astral Lux",
+      "units": [
+        "Lux",
+        "Vladimir",
+        "Skarner",
+        "Varus",
+        "Aurelion Sol",
+        "Sylas",
+        "Zyra",
+        "Nidalee"
+      ],
+      "tier": "A",
+      "strategy": "lvl 6"
+    },
+    {
+      "name": "Whispers Sy'fen Pantheon",
+      "units": [
+        "Sy'fen",
+        "Pantheon",
+        "Yasuo",
+        "Sylas",
+        "Bard",
+        "Soraka",
+        "Seraphine",
+        "Zyra"
+      ],
+      "tier": "A",
+      "strategy": "Fast 8"
+    },
+    {
+      "name": "Ragewing Xayah",
+      "units": [
+        "Xayah",
+        "Hecarim",
+        "Jayce",
+        "Bard",
+        "Rakan",
+        "Twitch",
+        "Sejuani",
+        "Senna",
+        "Sett"
+      ],
+      "tier": "A",
+      "strategy": "Fast 8"
+    },
+    {
+      "name": "Warrior Olaf",
+      "units": [
+        "Yone",
+        "Olaf",
+        "Yasuo",
+        "Pantheon",
+        "Bard",
+        "Rakan",
+        "Sylas",
+        "Braum"
+      ],
+      "tier": "A",
+      "strategy": "lvl 6"
+    },
+    {
+      "name": "Cavalier Nunu & Willump",
+      "units": [
+        "Nunu & Willump",
+        "Yasuo",
+        "Yone",
+        "Hecarim",
+        "Lillia",
+        "Rell",
+        "Leona",
+        "Sejuani"
+      ],
+      "tier": "A",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Lagoon Sohm",
+      "units": [
+        "Sohm",
+        "Nilah",
+        "Zac",
+        "Malphite",
+        "Seraphine",
+        "Sylas",
+        "Zeri",
+        "Taliyah"
+      ],
+      "tier": "A",
+      "strategy": "Fast 8"
+    }
+  ]
+}

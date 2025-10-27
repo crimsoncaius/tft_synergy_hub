@@ -57,3 +57,14 @@ export interface ActivatedSynergy {
   activatedThresholds: string[];
   isOrigin: boolean;
 }
+
+export interface Composition {
+  name: string;
+  units: string[];
+  tier: string;
+  strategy: string;
+}
+
+export interface CompositionsData {
+  compositions: Composition[];
+}

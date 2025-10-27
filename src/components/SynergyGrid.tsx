@@ -8,6 +8,8 @@ import type {
   SavedTeam,
   SavedTeamsData,
   ActivatedSynergy,
+  Composition,
+  CompositionsData,
 } from "../types/tft";
 import {
   buildSynergyGrid,
@@ -20,6 +22,7 @@ import { CustomTagInput } from "./CustomTagInput";
 import emblemsData from "../assets/emblems.json";
 import synergyDataRaw from "../assets/synergy_grid.json";
 import unitsDataRaw from "../assets/units.json";
+import compositionsDataRaw from "../assets/compositions.json";
 
 // Unit types in order of frequency
 const UNIT_TYPES = [
@@ -80,15 +83,18 @@ export const SynergyGrid: React.FC = () => {
     Array<{ id: string; text: string; className: string }>
   >([]);
   const [championFilterInput, setChampionFilterInput] = useState<string>("");
+  const [compositions, setCompositions] = useState<Composition[]>([]);
+  const [compositionNameSearch, setCompositionNameSearch] =
+    useState<string>("");
+  const [compositionFilterTags, setCompositionFilterTags] = useState<
+    Array<{ id: string; text: string; className: string }>
+  >([]);
+  const [compositionFilterInput, setCompositionFilterInput] =
+    useState<string>("");
 
   useEffect(() => {
     const loadData = async () => {
       try {
-        // Load selected team from file
-        const teamResponse = await fetch("/selected_team.txt").catch(
-          () => null
-        ); // Handle file not found
-
         setSynergyData(synergyDataRaw as unknown as SynergyData);
         setUnits(unitsDataRaw.units as unknown as Unit[]);
         setGridData(
@@ -119,27 +125,12 @@ export const SynergyGrid: React.FC = () => {
           console.error("Error loading saved teams from localStorage:", error);
         }
 
-        // Load selected champions from file
-        if (teamResponse && teamResponse.ok) {
-          const teamText = await teamResponse.text();
-          const championNames = teamText
-            .split("\n")
-            .map((name) => name.trim())
-            .filter((name) => name.length > 0);
-          setSelectedChampions(new Set(championNames));
-          setSelectedChampionTags(
-            championNames.map((name, index) => {
-              const champion = (unitsDataRaw.units as unknown as Unit[]).find(
-                (unit: Unit) => unit.name === name
-              );
-              return {
-                id: index.toString(),
-                text: name,
-                className: getTagBackgroundClass(champion?.cost || 1),
-                cost: champion?.cost || 1,
-              };
-            })
-          );
+        // Load compositions
+        try {
+          const parsed = compositionsDataRaw as unknown as CompositionsData;
+          setCompositions(parsed.compositions || []);
+        } catch (error) {
+          console.error("Error loading compositions:", error);
         }
       } catch (error) {
         console.error("Error loading data:", error);
@@ -187,21 +178,16 @@ export const SynergyGrid: React.FC = () => {
       className: "",
     }));
 
-  // Save selected champions to file
-  const saveSelectedChampions = async (champions: Set<string>) => {
-    try {
-      const championList = Array.from(champions).join("\n");
-      await fetch("/selected_team.txt", {
-        method: "POST",
-        headers: {
-          "Content-Type": "text/plain",
-        },
-        body: championList,
-      });
-    } catch (error) {
-      console.error("Error saving selected champions:", error);
-    }
-  };
+  // Composition filter suggestions (excluding already selected filter champions)
+  const compositionFilterSuggestions = units
+    .filter(
+      (unit) => !compositionFilterTags.some((tag) => tag.text === unit.name)
+    )
+    .map((unit, index) => ({
+      id: `comp-filter-suggestion-${index}`,
+      text: unit.name,
+      className: "",
+    }));
 
   // Save current team to saved teams
   const saveCurrentTeam = (teamName: string) => {
@@ -240,7 +226,6 @@ export const SynergyGrid: React.FC = () => {
         };
       })
     );
-    saveSelectedChampions(newSelectedChampions);
   };
 
   // Delete a saved team
@@ -254,6 +239,45 @@ export const SynergyGrid: React.FC = () => {
     } catch (error) {
       console.error("Error deleting team from localStorage:", error);
     }
+  };
+
+  // Load a composition
+  const loadComposition = (composition: Composition) => {
+    // Clear existing selections
+    setSelectedChampions(new Set());
+    setSelectedChampionTags([]);
+    setSelectedEmblems([]);
+    setSelectedEmblemTags([]);
+
+    // Create a Set from composition units
+    const newSelectedChampions = new Set<string>();
+    const newSelectedChampionTags: Array<{
+      id: string;
+      text: string;
+      className: string;
+      cost?: number;
+    }> = [];
+
+    composition.units.forEach((unitName, index) => {
+      const champion = units.find(
+        (unit) =>
+          unit.name === unitName ||
+          unit.name.toLowerCase() === unitName.toLowerCase()
+      );
+
+      if (champion) {
+        newSelectedChampions.add(champion.name);
+        newSelectedChampionTags.push({
+          id: index.toString(),
+          text: champion.name,
+          className: getTagBackgroundClass(champion.cost),
+          cost: champion.cost,
+        });
+      }
+    });
+
+    setSelectedChampions(newSelectedChampions);
+    setSelectedChampionTags(newSelectedChampionTags);
   };
 
   // Helper function to get cost-based background color for tags
@@ -334,7 +358,6 @@ export const SynergyGrid: React.FC = () => {
     }
 
     setSelectedChampionTags(updatedTags);
-    saveSelectedChampions(newChampions);
 
     // Clear input only on successful addition
     setInputValue("");
@@ -352,7 +375,6 @@ export const SynergyGrid: React.FC = () => {
     setSelectedChampionTags(
       selectedChampionTags.filter((_, index) => index !== i)
     );
-    saveSelectedChampions(newChampions);
   };
 
   // Emblem handlers
@@ -415,6 +437,25 @@ export const SynergyGrid: React.FC = () => {
     return matchesTeamName && matchesChampions;
   });
 
+  // Filter compositions based on name and champion filters
+  const filteredCompositions = compositions.filter((composition) => {
+    // Composition name filter (only if not empty)
+    const matchesName =
+      compositionNameSearch.trim() === "" ||
+      composition.name
+        .toLowerCase()
+        .includes(compositionNameSearch.toLowerCase());
+
+    // Champion filter (only if not empty)
+    const matchesChampions =
+      compositionFilterTags.length === 0 ||
+      compositionFilterTags.every((filterTag) =>
+        composition.units.includes(filterTag.text)
+      );
+
+    return matchesName && matchesChampions;
+  });
+
   // Champion filter handlers
   const handleChampionFilterAddition = (tag: any) => {
     // Check if this is a valid champion name
@@ -461,6 +502,56 @@ export const SynergyGrid: React.FC = () => {
 
   const handleChampionFilterDeletion = (i: number) => {
     setChampionFilterTags(championFilterTags.filter((_, index) => index !== i));
+  };
+
+  // Composition filter handlers
+  const handleCompositionFilterAddition = (tag: any) => {
+    // Check if this is a valid champion name
+    const knownChampion = units.find(
+      (unit) => unit.name.toLowerCase() === tag.text.toLowerCase()
+    );
+
+    if (!knownChampion) {
+      // Reject invalid champion names - keep text in input
+      console.warn(`"${tag.text}" is not a valid champion name`);
+      setCompositionFilterInput(tag.text);
+      return;
+    }
+
+    // Check for duplicates
+    if (
+      compositionFilterTags.some(
+        (filterTag) => filterTag.text === knownChampion.name
+      )
+    ) {
+      console.warn(`"${knownChampion.name}" is already in the filter`);
+      setCompositionFilterInput(tag.text);
+      return;
+    }
+
+    // Use the exact champion name from data
+    const standardizedText = knownChampion.name;
+
+    const updatedTags = [
+      ...compositionFilterTags,
+      {
+        id: tag.id,
+        text: standardizedText,
+        className: "bg-gray-600",
+      },
+    ];
+    setCompositionFilterTags(updatedTags);
+    setCompositionFilterInput("");
+  };
+
+  const handleCompositionFilterInputChange = (input: string) => {
+    setCompositionFilterInput(input);
+  };
+
+  const handleCompositionFilterDeletion = (i: number) => {
+    setCompositionFilterTags(
+      compositionFilterTags.filter((_, index) => index !== i)
+    );
   };
 
   if (loading) {
@@ -565,7 +656,6 @@ export const SynergyGrid: React.FC = () => {
         setSelectedChampionTags(updatedTags);
       }
       setSelectedChampions(newSelectedChampions);
-      saveSelectedChampions(newSelectedChampions);
     };
 
     return (
@@ -1069,7 +1159,6 @@ export const SynergyGrid: React.FC = () => {
               onClick={() => {
                 setSelectedChampions(new Set());
                 setSelectedChampionTags([]);
-                saveSelectedChampions(new Set());
               }}
               className="mb-2 px-3 py-1 text-xs bg-red-600 hover:bg-red-700 text-white rounded-full transition-colors"
             >
@@ -1158,6 +1247,104 @@ export const SynergyGrid: React.FC = () => {
             inputValue={emblemInputValue}
             onInputChange={handleEmblemInputChange}
           />
+        </div>
+
+        {/* Recommended Compositions Section */}
+        <div className="mt-2 mb-16 bg-slate-700 rounded-lg p-2">
+          <div className="flex flex-col gap-2 mb-2">
+            <div className="flex items-center justify-between">
+              <h3 className="text-white font-semibold text-sm">
+                Recommended Compositions ({filteredCompositions.length}/
+                {compositions.length})
+              </h3>
+              <input
+                type="text"
+                value={compositionNameSearch}
+                onChange={(e) => setCompositionNameSearch(e.target.value)}
+                placeholder="Search composition name..."
+                className="px-2 py-1 text-xs bg-slate-600 text-white border border-slate-500 rounded focus:outline-none focus:border-blue-400 w-48"
+              />
+            </div>
+            {(compositionNameSearch || compositionFilterTags.length > 0) && (
+              <div className="flex items-center">
+                <button
+                  onClick={() => {
+                    setCompositionNameSearch("");
+                    setCompositionFilterTags([]);
+                  }}
+                  className="px-3 py-1 text-xs bg-red-600 hover:bg-red-700 text-white rounded-full transition-colors"
+                >
+                  Clear Filters
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* Composition Champion Filter */}
+          <div className="mb-2">
+            <CustomTagInput
+              tags={compositionFilterTags}
+              suggestions={compositionFilterSuggestions}
+              onAdd={handleCompositionFilterAddition}
+              onDelete={handleCompositionFilterDeletion}
+              inputValue={compositionFilterInput}
+              onInputChange={handleCompositionFilterInputChange}
+            />
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {compositions.length > 0 ? (
+              filteredCompositions.length > 0 ? (
+                filteredCompositions.map((composition) => {
+                  const tierColorClass =
+                    composition.tier === "S"
+                      ? "bg-amber-600"
+                      : "bg-emerald-600";
+                  const hoverColorClass =
+                    composition.tier === "S"
+                      ? "hover:bg-amber-700"
+                      : "hover:bg-emerald-700";
+
+                  return (
+                    <div key={composition.name} className="relative group">
+                      <button
+                        onClick={() => loadComposition(composition)}
+                        className={`px-3 py-1 text-xs ${tierColorClass} ${hoverColorClass} text-white rounded-full transition-colors`}
+                        title={`Click to load this composition`}
+                      >
+                        {composition.name} ({composition.tier}) -{" "}
+                        {composition.units.length} units
+                      </button>
+                      <div className="absolute bottom-full left-0 mb-2 w-64 bg-gray-900 border border-gray-500 rounded-lg p-3 opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-10">
+                        <div className="space-y-1">
+                          <div className="font-bold text-white text-sm">
+                            {composition.name}
+                          </div>
+                          <div className="text-gray-300 text-xs">
+                            Strategy: {composition.strategy}
+                          </div>
+                          <div className="text-gray-300 text-xs">
+                            Tier: {composition.tier}
+                          </div>
+                          <div className="text-gray-400 text-xs pt-1 border-t border-gray-600">
+                            Units: {composition.units.join(", ")}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                <div className="text-xs text-gray-400">
+                  No compositions match the current filters.
+                </div>
+              )
+            ) : (
+              <div className="text-xs text-gray-400">
+                No recommended compositions available.
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Saved Teams Section */}
