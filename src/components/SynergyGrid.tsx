@@ -19,10 +19,14 @@ import {
 } from "../utils/gridBuilder";
 import { Tooltip } from "./Tooltip";
 import { CustomTagInput } from "./CustomTagInput";
-import emblemsData from "../assets/emblems.json";
-import synergyDataRaw from "../assets/synergy_grid.json";
-import unitsDataRaw from "../assets/units.json";
-import compositionsDataRaw from "../assets/compositions.json";
+import emblemsData75 from "../assets/set-7.5-revival/emblems.json";
+import synergyDataRaw75 from "../assets/set-7.5-revival/synergy_grid.json";
+import unitsDataRaw75 from "../assets/set-7.5-revival/units.json";
+import compositionsDataRaw75 from "../assets/set-7.5-revival/compositions.json";
+import emblemsData16 from "../assets/set-16/emblems.json";
+import synergyDataRaw16 from "../assets/set-16/synergy_grid.json";
+import unitsDataRaw16 from "../assets/set-16/units.json";
+import compositionsDataRaw16 from "../assets/set-16/compositions.json";
 
 // Unit types in order of frequency
 const UNIT_TYPES = [
@@ -91,10 +95,38 @@ export const SynergyGrid: React.FC = () => {
   >([]);
   const [compositionFilterInput, setCompositionFilterInput] =
     useState<string>("");
+  const [selectedSet, setSelectedSet] = useState<"7.5" | "16">("7.5");
 
   useEffect(() => {
     const loadData = async () => {
       try {
+        setLoading(true);
+        
+        // Clear selections when switching sets
+        setSelectedChampions(new Set());
+        setSelectedChampionTags([]);
+        setSelectedEmblems([]);
+        setSelectedEmblemTags([]);
+        setSelectedOrigins(new Set());
+        setSelectedClasses(new Set());
+        setSelectedTypes(new Set());
+        setSelectedCosts(new Set());
+
+        // Load data based on selected set
+        let synergyDataRaw, unitsDataRaw, compositionsDataRaw, emblemsData;
+        
+        if (selectedSet === "7.5") {
+          synergyDataRaw = synergyDataRaw75;
+          unitsDataRaw = unitsDataRaw75;
+          compositionsDataRaw = compositionsDataRaw75;
+          emblemsData = emblemsData75;
+        } else {
+          synergyDataRaw = synergyDataRaw16;
+          unitsDataRaw = unitsDataRaw16;
+          compositionsDataRaw = compositionsDataRaw16;
+          emblemsData = emblemsData16;
+        }
+
         setSynergyData(synergyDataRaw as unknown as SynergyData);
         setUnits(unitsDataRaw.units as unknown as Unit[]);
         setGridData(
@@ -114,15 +146,18 @@ export const SynergyGrid: React.FC = () => {
         }));
         setSuggestions(championSuggestions);
 
-        // Load saved teams from localStorage
+        // Load saved teams from localStorage (set-specific)
         try {
-          const savedTeamsData = localStorage.getItem("savedTeams");
+          const savedTeamsData = localStorage.getItem(`savedTeams-${selectedSet}`);
           if (savedTeamsData) {
             const parsed = JSON.parse(savedTeamsData);
             setSavedTeams(parsed.teams || []);
+          } else {
+            setSavedTeams([]);
           }
         } catch (error) {
           console.error("Error loading saved teams from localStorage:", error);
+          setSavedTeams([]);
         }
 
         // Load compositions
@@ -131,6 +166,7 @@ export const SynergyGrid: React.FC = () => {
           setCompositions(parsed.compositions || []);
         } catch (error) {
           console.error("Error loading compositions:", error);
+          setCompositions([]);
         }
       } catch (error) {
         console.error("Error loading data:", error);
@@ -140,7 +176,7 @@ export const SynergyGrid: React.FC = () => {
     };
 
     loadData();
-  }, []);
+  }, [selectedSet]);
 
   useEffect(() => {
     if (synergyData && units.length > 0) {
@@ -205,7 +241,7 @@ export const SynergyGrid: React.FC = () => {
 
     try {
       const savedTeamsData: SavedTeamsData = { teams: updatedTeams };
-      localStorage.setItem("savedTeams", JSON.stringify(savedTeamsData));
+      localStorage.setItem(`savedTeams-${selectedSet}`, JSON.stringify(savedTeamsData));
     } catch (error) {
       console.error("Error saving team to localStorage:", error);
     }
@@ -235,7 +271,7 @@ export const SynergyGrid: React.FC = () => {
 
     try {
       const savedTeamsData: SavedTeamsData = { teams: updatedTeams };
-      localStorage.setItem("savedTeams", JSON.stringify(savedTeamsData));
+      localStorage.setItem(`savedTeams-${selectedSet}`, JSON.stringify(savedTeamsData));
     } catch (error) {
       console.error("Error deleting team from localStorage:", error);
     }
@@ -383,8 +419,11 @@ export const SynergyGrid: React.FC = () => {
   const handleEmblemAddition = (tag: any) => {
     const emblemName = tag.text;
 
+    // Get current emblem data based on selected set
+    const currentEmblemsData = selectedSet === "7.5" ? emblemsData75 : emblemsData16;
+
     // Check if this is a valid emblem
-    const isValidEmblem = emblemsData.includes(emblemName);
+    const isValidEmblem = currentEmblemsData.includes(emblemName);
     if (!isValidEmblem) {
       console.warn(`"${emblemName}" is not a valid emblem name`);
       setEmblemInputValue(emblemName);
@@ -745,9 +784,33 @@ export const SynergyGrid: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-800 px-8 pt-4 pb-8 flex flex-col">
-      <h1 className="text-2xl font-bold text-white mb-4 text-center">
-        TFT Set Revival 7.5 Synergy Grid
-      </h1>
+      <div className="flex items-center justify-center gap-4 mb-4">
+        <h1 className="text-2xl font-bold text-white text-center">
+          TFT Set {selectedSet === "7.5" ? "Revival 7.5" : "16"} Synergy Grid
+        </h1>
+        <div className="flex items-center gap-2 bg-slate-700 rounded-lg p-1">
+          <button
+            onClick={() => setSelectedSet("7.5")}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              selectedSet === "7.5"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white"
+            }`}
+          >
+            Set 7.5
+          </button>
+          <button
+            onClick={() => setSelectedSet("16")}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              selectedSet === "16"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white"
+            }`}
+          >
+            Set 16
+          </button>
+        </div>
+      </div>
 
       <div className="bg-slate-700 rounded-lg overflow-hidden shadow-2xl flex-1 flex flex-col">
         <div className="flex-1 overflow-auto">
@@ -1237,7 +1300,7 @@ export const SynergyGrid: React.FC = () => {
           )}
           <CustomTagInput
             tags={selectedEmblemTags}
-            suggestions={emblemsData.map((emblem, index) => ({
+            suggestions={(selectedSet === "7.5" ? emblemsData75 : emblemsData16).map((emblem, index) => ({
               id: `emblem-${index}`,
               text: emblem,
               className: "",

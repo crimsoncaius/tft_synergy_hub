@@ -1,0 +1,391 @@
+{
+  "units": [
+    {
+      "name": "Akali",
+      "type": "Magic Fighter",
+      "traits": ["Ionia", "Assassin"],
+      "cost": 4,
+      "ability": {
+        "name": "Five Point Strike",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Deal 200/300/500 (AP) magic damage to nearby enemies."
+      }
+    },
+    {
+      "name": "Annie",
+      "type": "Magic Caster",
+      "traits": ["Demacia", "Mage"],
+      "cost": 1,
+      "ability": {
+        "name": "Disintegrate",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Deal 150/225/350 (AP) magic damage to target."
+      }
+    },
+    {
+      "name": "Ashe",
+      "type": "Attack Marksman",
+      "traits": ["Freljord", "Marksman"],
+      "cost": 2,
+      "ability": {
+        "name": "Volley",
+        "mana_start": 0,
+        "mana_max": 40,
+        "description": "Fire arrows dealing 100/150/250 (AD) physical damage."
+      }
+    },
+    {
+      "name": "Braum",
+      "type": "Magic Tank",
+      "traits": ["Freljord", "Guardian"],
+      "cost": 2,
+      "ability": {
+        "name": "Unbreakable",
+        "mana_start": 40,
+        "mana_max": 70,
+        "description": "Shield for 300/400/600 (AP) for 4 seconds."
+      }
+    },
+    {
+      "name": "Caitlyn",
+      "type": "Attack Marksman",
+      "traits": ["Piltover", "Marksman"],
+      "cost": 1,
+      "ability": {
+        "name": "Ace in the Hole",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Deal 300/450/700 (AD) physical damage to farthest enemy."
+      }
+    },
+    {
+      "name": "Darius",
+      "type": "Attack Fighter",
+      "traits": ["Noxus", "Bruiser"],
+      "cost": 3,
+      "ability": {
+        "name": "Noxian Guillotine",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Deal 400/600/900 (AD) physical damage. Execute if below 50% health."
+      }
+    },
+    {
+      "name": "Garen",
+      "type": "Attack Fighter",
+      "traits": ["Demacia", "Bruiser"],
+      "cost": 2,
+      "ability": {
+        "name": "Judgment",
+        "mana_start": 0,
+        "mana_max": 40,
+        "description": "Spin dealing 150/225/350 (AD) physical damage per second."
+      }
+    },
+    {
+      "name": "Irelia",
+      "type": "Attack Fighter",
+      "traits": ["Ionia"],
+      "cost": 3,
+      "ability": {
+        "name": "Bladesurge",
+        "mana_start": 0,
+        "mana_max": 30,
+        "description": "Dash dealing 200/300/500 (AD) physical damage."
+      }
+    },
+    {
+      "name": "Janna",
+      "type": "Magic Caster",
+      "traits": ["Zaun", "Support"],
+      "cost": 3,
+      "ability": {
+        "name": "Monsoon",
+        "mana_start": 40,
+        "mana_max": 80,
+        "description": "Heal allies for 200/300/500 (AP) and knockback enemies."
+      }
+    },
+    {
+      "name": "Jinx",
+      "type": "Attack Marksman",
+      "traits": ["Piltover", "Zaun", "Marksman"],
+      "triple_trait": true,
+      "cost": 4,
+      "ability": {
+        "name": "Get Excited!",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "Gain 50% Attack Speed after takedown."
+      }
+    },
+    {
+      "name": "Katarina",
+      "type": "Magic Fighter",
+      "traits": ["Noxus", "Assassin"],
+      "cost": 3,
+      "ability": {
+        "name": "Death Lotus",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Channel dealing 300/450/700 (AP) magic damage over 3 seconds."
+      }
+    },
+    {
+      "name": "Leona",
+      "type": "Magic Tank",
+      "traits": ["Demacia", "Guardian"],
+      "cost": 1,
+      "ability": {
+        "name": "Solar Flare",
+        "mana_start": 30,
+        "mana_max": 60,
+        "description": "Stun enemies in area for 2 seconds."
+      }
+    },
+    {
+      "name": "Lux",
+      "type": "Magic Caster",
+      "traits": ["Demacia", "Mage"],
+      "cost": 2,
+      "ability": {
+        "name": "Final Spark",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Fire laser dealing 400/600/900 (AP) magic damage."
+      }
+    },
+    {
+      "name": "Lulu",
+      "type": "Magic Caster",
+      "traits": ["Ionia", "Support"],
+      "cost": 2,
+      "ability": {
+        "name": "Whimsy",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Polymorph enemy and grant ally Attack Speed."
+      }
+    },
+    {
+      "name": "Malphite",
+      "type": "Magic Tank",
+      "traits": ["Ionia", "Tank"],
+      "cost": 3,
+      "ability": {
+        "name": "Unstoppable Force",
+        "mana_start": 30,
+        "mana_max": 80,
+        "description": "Dash dealing 300/450/700 (AP) magic damage and stunning."
+      }
+    },
+    {
+      "name": "Nautilus",
+      "type": "Magic Tank",
+      "traits": ["Zaun", "Tank"],
+      "cost": 2,
+      "ability": {
+        "name": "Depth Charge",
+        "mana_start": 40,
+        "mana_max": 70,
+        "description": "Hook enemy dealing 200/300/500 (AP) magic damage."
+      }
+    },
+    {
+      "name": "Poppy",
+      "type": "Attack Tank",
+      "traits": ["Demacia", "Tank"],
+      "cost": 1,
+      "ability": {
+        "name": "Hammer Shock",
+        "mana_start": 0,
+        "mana_max": 40,
+        "description": "Deal 150/225/350 (AD) physical damage in cone."
+      }
+    },
+    {
+      "name": "Sett",
+      "type": "Attack Fighter",
+      "traits": ["Ionia", "Bruiser"],
+      "cost": 3,
+      "ability": {
+        "name": "The Show Stopper",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Grab and slam enemy dealing 300/450/700 (AD) physical damage."
+      }
+    },
+    {
+      "name": "Sion",
+      "type": "Attack Tank",
+      "traits": ["Noxus", "Tank"],
+      "cost": 4,
+      "ability": {
+        "name": "Unstoppable Onslaught",
+        "mana_start": 30,
+        "mana_max": 90,
+        "description": "Charge dealing 400/600/900 (AD) physical damage."
+      }
+    },
+    {
+      "name": "Soraka",
+      "type": "Magic Caster",
+      "traits": ["Freljord", "Support"],
+      "cost": 4,
+      "ability": {
+        "name": "Wish",
+        "mana_start": 50,
+        "mana_max": 100,
+        "description": "Heal all allies for 300/450/700 (AP)."
+      }
+    },
+    {
+      "name": "Taric",
+      "type": "Magic Tank",
+      "traits": ["Demacia", "Guardian"],
+      "cost": 3,
+      "ability": {
+        "name": "Cosmic Radiance",
+        "mana_start": 50,
+        "mana_max": 100,
+        "description": "Grant invulnerability for 2 seconds."
+      }
+    },
+    {
+      "name": "Vayne",
+      "type": "Attack Marksman",
+      "traits": ["Demacia", "Marksman"],
+      "cost": 3,
+      "ability": {
+        "name": "Final Hour",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "Gain invisibility and bonus Attack Damage."
+      }
+    },
+    {
+      "name": "Veigar",
+      "type": "Magic Caster",
+      "traits": ["Zaun", "Mage"],
+      "cost": 4,
+      "ability": {
+        "name": "Primordial Burst",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Deal 500/750/1200 (AP) magic damage to target."
+      }
+    },
+    {
+      "name": "Vi",
+      "type": "Attack Fighter",
+      "traits": ["Piltover", "Bruiser"],
+      "cost": 2,
+      "ability": {
+        "name": "Assault and Battery",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Dash and punch dealing 250/375/600 (AD) physical damage."
+      }
+    },
+    {
+      "name": "Viktor",
+      "type": "Magic Caster",
+      "traits": ["Zaun", "Mage"],
+      "cost": 3,
+      "ability": {
+        "name": "Chaos Storm",
+        "mana_start": 0,
+        "mana_max": 70,
+        "description": "Summon storm dealing 300/450/700 (AP) magic damage."
+      }
+    },
+    {
+      "name": "Volibear",
+      "type": "Magic Fighter",
+      "traits": ["Freljord", "Bruiser"],
+      "cost": 4,
+      "ability": {
+        "name": "Stormbringer",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Transform gaining 400/600/900 (AP) Health and dealing area damage."
+      }
+    },
+    {
+      "name": "Zac",
+      "type": "Magic Tank",
+      "traits": ["Zaun", "Tank"],
+      "cost": 2,
+      "ability": {
+        "name": "Let's Bounce!",
+        "mana_start": 30,
+        "mana_max": 80,
+        "description": "Bounce dealing 200/300/500 (AP) magic damage and healing."
+      }
+    },
+    {
+      "name": "Zed",
+      "type": "Attack Fighter",
+      "traits": ["Ionia", "Assassin"],
+      "cost": 4,
+      "ability": {
+        "name": "Death Mark",
+        "mana_start": 0,
+        "mana_max": 50,
+        "description": "Dash and mark dealing 300/450/700 (AD) physical damage."
+      }
+    },
+    {
+      "name": "Zoe",
+      "type": "Magic Caster",
+      "traits": ["Ionia", "Mage"],
+      "cost": 5,
+      "ability": {
+        "name": "Paddle Star",
+        "mana_start": 0,
+        "mana_max": 40,
+        "description": "Fire star dealing 400/600/1000 (AP) magic damage."
+      }
+    },
+    {
+      "name": "Hecarim",
+      "type": "Magic Tank",
+      "traits": ["Shadow Isles", "Tank"],
+      "cost": 3,
+      "ability": {
+        "name": "Onslaught of Shadows",
+        "mana_start": 30,
+        "mana_max": 90,
+        "description": "Charge dealing 300/450/700 (AP) magic damage."
+      }
+    },
+    {
+      "name": "Thresh",
+      "type": "Magic Tank",
+      "traits": ["Shadow Isles", "Guardian"],
+      "cost": 2,
+      "ability": {
+        "name": "Death Sentence",
+        "mana_start": 40,
+        "mana_max": 70,
+        "description": "Hook enemy dealing 200/300/500 (AP) magic damage."
+      }
+    },
+    {
+      "name": "Viego",
+      "type": "Attack Fighter",
+      "traits": ["Shadow Isles", "Assassin"],
+      "cost": 5,
+      "ability": {
+        "name": "Heartbreaker",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Dash and possess dealing 400/600/1000 (AD) physical damage."
+      }
+    }
+  ]
+}
+
+

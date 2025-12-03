@@ -1,0 +1,66 @@
+{
+  "compositions": [
+    {
+      "name": "Demacia Guardians",
+      "units": [
+        "Garen",
+        "Lux",
+        "Poppy",
+        "Leona",
+        "Taric"
+      ],
+      "tier": "S",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Noxus Assassins",
+      "units": [
+        "Darius",
+        "Katarina",
+        "Sion",
+        "Akali",
+        "Zed"
+      ],
+      "tier": "S",
+      "strategy": "Aggressive"
+    },
+    {
+      "name": "Ionia Mages",
+      "units": [
+        "Zoe",
+        "Lux",
+        "Veigar",
+        "Annie",
+        "Irelia"
+      ],
+      "tier": "A",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Piltover Marksmen",
+      "units": [
+        "Jinx",
+        "Caitlyn",
+        "Ashe",
+        "Vayne",
+        "Vi"
+      ],
+      "tier": "A",
+      "strategy": "Fast 8"
+    },
+    {
+      "name": "Freljord Tanks",
+      "units": [
+        "Volibear",
+        "Braum",
+        "Ashe",
+        "Soraka",
+        "Malphite"
+      ],
+      "tier": "B",
+      "strategy": "Standard"
+    }
+  ]
+}
+
+

@@ -1,0 +1,147 @@
+{
+  "classes": [
+    {
+      "name": "Assassin",
+      "description": "Assassins leap to the enemy backline and gain bonus critical strike chance.",
+      "champions": ["Akali", "Katarina", "Zed"],
+      "bonuses": {
+        "2": "15% Crit Chance",
+        "4": "35% Crit Chance",
+        "6": "60% Crit Chance"
+      }
+    },
+    {
+      "name": "Bruiser",
+      "description": "Bruisers gain bonus maximum Health.",
+      "champions": ["Darius", "Garen", "Sett", "Volibear"],
+      "bonuses": {
+        "2": "150 Health",
+        "4": "350 Health",
+        "6": "650 Health"
+      }
+    },
+    {
+      "name": "Guardian",
+      "description": "Guardians shield themselves and nearby allies.",
+      "champions": ["Braum", "Leona", "Taric"],
+      "bonuses": {
+        "2": "200 Shield",
+        "4": "400 Shield",
+        "6": "800 Shield"
+      }
+    },
+    {
+      "name": "Mage",
+      "description": "Mages cast their abilities twice.",
+      "champions": ["Annie", "Lux", "Veigar", "Zoe"],
+      "bonuses": {
+        "3": "75% Ability Power",
+        "5": "100% Ability Power",
+        "7": "150% Ability Power"
+      }
+    },
+    {
+      "name": "Marksman",
+      "description": "Marksmen gain bonus Attack Speed.",
+      "champions": ["Ashe", "Caitlyn", "Jinx", "Vayne"],
+      "bonuses": {
+        "2": "20% Attack Speed",
+        "4": "50% Attack Speed",
+        "6": "90% Attack Speed"
+      }
+    },
+    {
+      "name": "Tank",
+      "description": "Tanks gain bonus Armor and Magic Resist.",
+      "champions": ["Malphite", "Nautilus", "Poppy", "Sion"],
+      "bonuses": {
+        "2": "30 Armor, 30 Magic Resist",
+        "4": "60 Armor, 60 Magic Resist",
+        "6": "100 Armor, 100 Magic Resist"
+      }
+    },
+    {
+      "name": "Support",
+      "description": "Supports provide utility to their team.",
+      "champions": ["Janna", "Lulu", "Soraka"],
+      "bonuses": {
+        "2": "10% Team Damage",
+        "3": "20% Team Damage"
+      }
+    }
+  ],
+  "origins": [
+    {
+      "name": "Demacia",
+      "description": "Demacian champions gain bonus Armor and Magic Resist.",
+      "champions": ["Garen", "Lux", "Poppy"],
+      "bonuses": {
+        "3": "20 Armor, 20 Magic Resist",
+        "5": "40 Armor, 40 Magic Resist",
+        "7": "70 Armor, 70 Magic Resist"
+      }
+    },
+    {
+      "name": "Noxus",
+      "description": "Noxian champions gain bonus Attack Damage and Ability Power.",
+      "champions": ["Darius", "Katarina", "Sion"],
+      "bonuses": {
+        "3": "15 Attack Damage, 15 Ability Power",
+        "5": "35 Attack Damage, 35 Ability Power",
+        "7": "60 Attack Damage, 60 Ability Power"
+      }
+    },
+    {
+      "name": "Ionia",
+      "description": "Ionian champions gain bonus Attack Speed.",
+      "champions": ["Akali", "Irelia", "Zed"],
+      "bonuses": {
+        "3": "15% Attack Speed",
+        "5": "35% Attack Speed",
+        "7": "60% Attack Speed"
+      }
+    },
+    {
+      "name": "Piltover",
+      "description": "Piltover champions gain bonus gold and items.",
+      "champions": ["Caitlyn", "Jinx", "Vi"],
+      "bonuses": {
+        "3": "1 Gold per round",
+        "5": "3 Gold per round",
+        "7": "6 Gold per round"
+      }
+    },
+    {
+      "name": "Zaun",
+      "description": "Zaun champions gain bonus Health and regeneration.",
+      "champions": ["Jinx", "Viktor", "Zac"],
+      "bonuses": {
+        "3": "100 Health, 1% Regen",
+        "5": "250 Health, 2% Regen",
+        "7": "500 Health, 4% Regen"
+      }
+    },
+    {
+      "name": "Freljord",
+      "description": "Freljord champions slow enemies and gain bonus durability.",
+      "champions": ["Ashe", "Braum", "Volibear"],
+      "bonuses": {
+        "3": "20% Slow, 10% Durability",
+        "5": "40% Slow, 20% Durability",
+        "7": "70% Slow, 35% Durability"
+      }
+    },
+    {
+      "name": "Shadow Isles",
+      "description": "Shadow Isles champions gain bonus on-kill effects.",
+      "champions": ["Hecarim", "Thresh", "Viego"],
+      "bonuses": {
+        "3": "10% On-kill Heal",
+        "5": "25% On-kill Heal",
+        "7": "50% On-kill Heal"
+      }
+    }
+  ]
+}
+
+
