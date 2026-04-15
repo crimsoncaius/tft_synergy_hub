@@ -117,23 +117,20 @@ export const SynergyGrid: React.FC = () => {
         setSelectedCosts(new Set());
 
         // Load data based on selected set
-        let synergyDataRaw, unitsDataRaw, compositionsDataRaw, emblemsData;
+        let synergyDataRaw, unitsDataRaw, compositionsDataRaw;
         
         if (selectedSet === "7.5") {
           synergyDataRaw = synergyDataRaw75;
           unitsDataRaw = unitsDataRaw75;
           compositionsDataRaw = compositionsDataRaw75;
-          emblemsData = emblemsData75;
         } else if (selectedSet === "16") {
           synergyDataRaw = synergyDataRaw16;
           unitsDataRaw = unitsDataRaw16;
           compositionsDataRaw = compositionsDataRaw16;
-          emblemsData = emblemsData16;
         } else {
           synergyDataRaw = synergyDataRaw17;
           unitsDataRaw = unitsDataRaw17;
           compositionsDataRaw = compositionsDataRaw17;
-          emblemsData = emblemsData17;
         }
 
         setSynergyData(synergyDataRaw as unknown as SynergyData);
