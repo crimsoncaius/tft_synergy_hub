@@ -1,0 +1,64 @@
+{
+  "compositions": [
+    {
+      "name": "Dark Star Snipers",
+      "units": ["Cho'Gath", "Lissandra", "Mordekaiser", "Kai'Sa", "Karma", "Jhin", "Xayah"],
+      "tier": "S",
+      "strategy": "Fast 8"
+    },
+    {
+      "name": "Conduit Reroll",
+      "units": ["Mordekaiser", "Zoe", "Viktor", "Aurelion Sol", "Bard", "Nasus", "Leona"],
+      "tier": "S",
+      "strategy": "Slow Roll"
+    },
+    {
+      "name": "Meeple Meeplords",
+      "units": ["Poppy", "Veigar", "Gnar", "Meepsie", "Fizz", "Corki", "Rammus", "Bard"],
+      "tier": "S",
+      "strategy": "Standard"
+    },
+    {
+      "name": "Space Groove Vanguard",
+      "units": ["Nasus", "Teemo", "Gwen", "Ornn", "Samira", "Nami", "Blitzcrank"],
+      "tier": "A",
+      "strategy": "Standard"
+    },
+    {
+      "name": "NOVA Challengers",
+      "units": ["Aatrox", "Caitlyn", "Akali", "Maokai", "Kindred", "Jinx", "Diana"],
+      "tier": "A",
+      "strategy": "Tempo"
+    },
+    {
+      "name": "Anima Marauders",
+      "units": ["Briar", "Jinx", "Aurora", "Illaoi", "Fiora", "Bel'Veth", "Master Yi"],
+      "tier": "S",
+      "strategy": "Loss Streak"
+    },
+    {
+      "name": "Stargazer Reroll",
+      "units": ["Talon", "Twisted Fate", "Jax", "Lulu", "Nunu", "Xayah"],
+      "tier": "A",
+      "strategy": "Slow Roll"
+    },
+    {
+      "name": "Psionic Flex",
+      "units": ["Gragas", "Pyke", "Viktor", "Master Yi", "Sona", "Mordekaiser"],
+      "tier": "A",
+      "strategy": "Fast 8"
+    },
+    {
+      "name": "Mecha Transformers",
+      "units": ["Urgot", "Aurelion Sol", "The Mighty Mech", "Karma", "Aurora", "Pyke"],
+      "tier": "A",
+      "strategy": "Fast 8"
+    },
+    {
+      "name": "Turbo Doomer",
+      "units": ["Vex", "Cho'Gath", "Mordekaiser", "Karma", "Nunu", "Leona", "Illaoi"],
+      "tier": "S",
+      "strategy": "Standard"
+    }
+  ]
+}

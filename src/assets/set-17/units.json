@@ -1,0 +1,772 @@
+{
+  "units": [
+    {
+      "name": "Aatrox",
+      "type": "Melee Tank",
+      "traits": ["N.O.V.A.", "Bastion"],
+      "cost": 1,
+      "ability": {
+        "name": "Stellar Slash",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Slash in a wide arc dealing physical damage to nearby enemies. Heal for a portion of damage dealt."
+      }
+    },
+    {
+      "name": "Akali",
+      "type": "Melee Assassin",
+      "traits": ["N.O.V.A.", "Marauder"],
+      "cost": 2,
+      "ability": {
+        "name": "Star Strike",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Reposition to strike the most enemies. Throw piercing kunai dealing physical damage."
+      }
+    },
+    {
+      "name": "Aurelion Sol",
+      "type": "Ranged Caster",
+      "traits": ["Mecha", "Conduit"],
+      "cost": 4,
+      "ability": {
+        "name": "Deathbeam",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Channel a deathbeam in a line towards target. Deals magic damage per second, ignores % of enemy Magic Resist."
+      }
+    },
+    {
+      "name": "Aurora",
+      "type": "Ranged Caster",
+      "traits": ["Anima", "Voyager"],
+      "cost": 3,
+      "ability": {
+        "name": "Hopped-Up Hacks",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Open a hex rift, Hacking enemies within for X seconds dealing magic damage."
+      }
+    },
+    {
+      "name": "Bard",
+      "type": "Ranged Caster",
+      "traits": ["Meeple", "Conduit"],
+      "cost": 5,
+      "ability": {
+        "name": "Ultra Friendly Object",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Summon a UFO over target dealing magic damage per second. Extra damage to Tanks. Can abduct dead enemies and create copies."
+      }
+    },
+    {
+      "name": "Bel'Veth",
+      "type": "Melee Attack Carry",
+      "traits": ["Primordian", "Challenger", "Marauder"],
+      "triple_trait": true,
+      "cost": 2,
+      "ability": {
+        "name": "Tidal Slashes",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Unleash a flurry of slashes at the current target, dealing physical damage each."
+      }
+    },
+    {
+      "name": "Blitzcrank",
+      "type": "Melee Tank",
+      "traits": ["Party Animal", "Space Groove", "Vanguard"],
+      "triple_trait": true,
+      "cost": 5,
+      "ability": {
+        "name": "Party Crasher",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Call bolts on high HP enemies. Active: Summon disco ball, uppercut target into it dealing AoE magic damage. Enter the Groove."
+      }
+    },
+    {
+      "name": "Briar",
+      "type": "Melee Assassin",
+      "traits": ["Anima", "Primordian", "Rogue"],
+      "triple_trait": true,
+      "cost": 1,
+      "ability": {
+        "name": "Fish Frenzy",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: For every % missing Health, gain Attack Speed. Active: Deal physical damage to the target."
+      }
+    },
+    {
+      "name": "Caitlyn",
+      "type": "Ranged Caster",
+      "traits": ["N.O.V.A.", "Fateweaver"],
+      "cost": 1,
+      "ability": {
+        "name": "Aim For The Head",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Fire a headshot at the farthest enemy dealing physical damage. If it kills, refund mana."
+      }
+    },
+    {
+      "name": "Cho'Gath",
+      "type": "Melee Tank",
+      "traits": ["Dark Star", "Brawler"],
+      "cost": 1,
+      "ability": {
+        "name": "Devour",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Deal magic damage to the lowest Health enemy in range and permanently gain max Health. If this kills them, gain even more max Health."
+      }
+    },
+    {
+      "name": "Corki",
+      "type": "Ranged AD Caster",
+      "traits": ["Meeple", "Fateweaver"],
+      "cost": 4,
+      "ability": {
+        "name": "Asteroid Blaster",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Strafe to a nearby position, unleashing missiles dealing physical damage."
+      }
+    },
+    {
+      "name": "Diana",
+      "type": "Melee Attack Carry",
+      "traits": ["Arbiter", "Challenger"],
+      "cost": 3,
+      "ability": {
+        "name": "Pale Cascade",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Attacks deal bonus magic damage. Active: Gain Shield and summon 3 orbiting orbs dealing magic damage."
+      }
+    },
+    {
+      "name": "Ezreal",
+      "type": "Ranged AD Caster",
+      "traits": ["Timebreaker", "Sniper"],
+      "cost": 1,
+      "ability": {
+        "name": "Temporal Shot",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Fire a blast at the current target dealing physical damage. Every X takedowns, gain a drone that deals physical damage on cast."
+      }
+    },
+    {
+      "name": "Fiora",
+      "type": "Melee Attack Carry",
+      "traits": ["Anima", "Divine Duelist", "Marauder"],
+      "triple_trait": true,
+      "cost": 5,
+      "ability": {
+        "name": "Perfect Bladework",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Every X attacks reveal a Vital. Dash to attack it for true damage and heal. Active: Reveal all Vitals and attack them rapidly."
+      }
+    },
+    {
+      "name": "Fizz",
+      "type": "Melee Assassin",
+      "traits": ["Meeple", "Rogue"],
+      "cost": 3,
+      "ability": {
+        "name": "—",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "—"
+      }
+    },
+    {
+      "name": "Gnar",
+      "type": "Ranged AD Carry",
+      "traits": ["Meeple", "Sniper"],
+      "cost": 2,
+      "ability": {
+        "name": "Slingshot Maneuver",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Every 5th attack, launch a returning boomerang dealing physical damage. Meep Bonus: Meeps attack alongside Gnar."
+      }
+    },
+    {
+      "name": "Gragas",
+      "type": "Melee Tank",
+      "traits": ["Psionic", "Brawler"],
+      "cost": 2,
+      "ability": {
+        "name": "Chemical Rage",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Heal over time, then deal magic damage to adjacent enemies and Chill them (reduce Attack Speed 30%)."
+      }
+    },
+    {
+      "name": "Graves",
+      "type": "Ranged AD Carry",
+      "traits": ["Factory New"],
+      "cost": 5,
+      "ability": {
+        "name": "—",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "—"
+      }
+    },
+    {
+      "name": "Gwen",
+      "type": "Melee Assassin",
+      "traits": ["Space Groove", "Rogue"],
+      "cost": 2,
+      "ability": {
+        "name": "Dance n' Dice",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Attacks deal magic damage. Active: Dash and snip the lowest HP enemy. If kill, dash and snip again."
+      }
+    },
+    {
+      "name": "Illaoi",
+      "type": "Melee Tank",
+      "traits": ["Anima", "Vanguard", "Shepherd"],
+      "triple_trait": true,
+      "cost": 3,
+      "ability": {
+        "name": "Test of Spirit",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Gain Shield. Drain Health from nearest enemies. Then slam down dealing magic damage to enemies within 2 hexes."
+      }
+    },
+    {
+      "name": "Jax",
+      "type": "Melee Tank",
+      "traits": ["Stargazer", "Bastion"],
+      "cost": 2,
+      "ability": {
+        "name": "—",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "—"
+      }
+    },
+    {
+      "name": "Jhin",
+      "type": "Ranged AD Carry",
+      "traits": ["Dark Star", "Eradicator", "Sniper"],
+      "triple_trait": true,
+      "cost": 5,
+      "ability": {
+        "name": "Space Opera",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Fixed attack speed, converts bonus AS into AD. Active: Summon spectral hands that fire alongside Jhin."
+      }
+    },
+    {
+      "name": "Jinx",
+      "type": "Ranged AD Carry",
+      "traits": ["Anima", "Challenger"],
+      "cost": 2,
+      "ability": {
+        "name": "Fishbones!",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Fire a barrage of bullets in a cone, each dealing physical damage to the first target hit."
+      }
+    },
+    {
+      "name": "Kai'Sa",
+      "type": "Ranged Assassin",
+      "traits": ["Dark Star", "Rogue"],
+      "cost": 3,
+      "ability": {
+        "name": "Bullet Cluster",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: On takedown, gain mana. Active: Fire missiles around the current target dealing physical damage."
+      }
+    },
+    {
+      "name": "Karma",
+      "type": "Ranged Caster",
+      "traits": ["Dark Star", "Voyager"],
+      "cost": 4,
+      "ability": {
+        "name": "Singularity",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Gather black hole force dealing magic damage split between target and closest enemies."
+      }
+    },
+    {
+      "name": "Kindred",
+      "type": "Ranged Attack Carry",
+      "traits": ["N.O.V.A.", "Challenger"],
+      "cost": 4,
+      "ability": {
+        "name": "Cosmic Pursuit",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Attacks/Abilities mark targets. At X marks, Wolf consumes them for physical damage. Active: Jump and fire arrows."
+      }
+    },
+    {
+      "name": "LeBlanc",
+      "type": "Ranged Caster",
+      "traits": ["Arbiter", "Shepherd"],
+      "cost": 4,
+      "ability": {
+        "name": "Fracture Reality",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Attacks deal magic damage instead. Active: Summon clones that attack alongside LeBlanc, firing bolts of magic damage."
+      }
+    },
+    {
+      "name": "Leona",
+      "type": "Melee Tank",
+      "traits": ["Arbiter", "Vanguard"],
+      "cost": 1,
+      "ability": {
+        "name": "Shield of Daybreak",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Gain Shield for 4 seconds. Bash the current target, dealing magic damage and stunning them."
+      }
+    },
+    {
+      "name": "Lissandra",
+      "type": "Ranged Caster",
+      "traits": ["Dark Star", "Shepherd", "Replicator"],
+      "triple_trait": true,
+      "cost": 1,
+      "ability": {
+        "name": "Dark Matter",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Hurl a dagger towards the target dealing magic damage. The dagger explodes dealing AoE magic damage."
+      }
+    },
+    {
+      "name": "Lulu",
+      "type": "Ranged Support Caster",
+      "traits": ["Stargazer", "Replicator"],
+      "cost": 3,
+      "ability": {
+        "name": "It's Raining Stars",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Spell gains a different secondary effect each game. Active: Call down something from the sky dealing magic damage with a special effect."
+      }
+    },
+    {
+      "name": "Maokai",
+      "type": "Melee Tank",
+      "traits": ["N.O.V.A.", "Brawler"],
+      "cost": 3,
+      "ability": {
+        "name": "Grasp of Convergence",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Gain more max HP from all sources. Active: Converge vines on target dealing magic damage and stunning."
+      }
+    },
+    {
+      "name": "Master Yi",
+      "type": "Melee Attack Carry",
+      "traits": ["Psionic", "Marauder"],
+      "cost": 4,
+      "ability": {
+        "name": "Psi Strikes",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Every 3rd attack strikes extra. Active: Enter Psi-State gaining Omnivamp, Attack Speed, and firing psychic projections."
+      }
+    },
+    {
+      "name": "Meepsie",
+      "type": "Support Caster",
+      "traits": ["Meeple", "Shepherd", "Voyager"],
+      "triple_trait": true,
+      "cost": 2,
+      "ability": {
+        "name": "—",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "—"
+      }
+    },
+    {
+      "name": "Milio",
+      "type": "Ranged Caster",
+      "traits": ["Timebreaker", "Fateweaver"],
+      "cost": 2,
+      "ability": {
+        "name": "ULTRA MEGA TIME KICK",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Kick a ball at an enemy dealing magic damage. Ball bounces to new targets with halving odds per bounce."
+      }
+    },
+    {
+      "name": "Miss Fortune",
+      "type": "Ranged AD Carry",
+      "traits": ["Gun Goddess"],
+      "cost": 3,
+      "ability": {
+        "name": "Gun Goddess Arsenal",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "—"
+      }
+    },
+    {
+      "name": "Mordekaiser",
+      "type": "Melee Tank/Caster",
+      "traits": ["Dark Star", "Conduit", "Vanguard"],
+      "triple_trait": true,
+      "cost": 2,
+      "ability": {
+        "name": "Indestructible",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Gain shield. Each second gain more shield and deal magic damage to adjacent enemies. Heal when ability ends."
+      }
+    },
+    {
+      "name": "Morgana",
+      "type": "Ranged Caster",
+      "traits": ["Dark Lady"],
+      "cost": 5,
+      "ability": {
+        "name": "Dark Form",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Transform gaining Shield. Tether nearest enemies dealing magic damage per second and healing."
+      }
+    },
+    {
+      "name": "Nami",
+      "type": "Ranged Support Caster",
+      "traits": ["Space Groove", "Replicator"],
+      "cost": 4,
+      "ability": {
+        "name": "Bubble Pop",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Toss a disco bubble dealing split damage in AoE. Sends globs to nearby enemies. On cast, enter the Groove."
+      }
+    },
+    {
+      "name": "Nasus",
+      "type": "Melee Tank",
+      "traits": ["Space Groove", "Vanguard"],
+      "cost": 1,
+      "ability": {
+        "name": "Groovin' Susan",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Transform temporarily, gaining max Health and dealing magic damage to adjacent enemies each second."
+      }
+    },
+    {
+      "name": "Nunu",
+      "type": "Melee Tank",
+      "traits": ["Stargazer", "Vanguard"],
+      "cost": 4,
+      "ability": {
+        "name": "Calamity",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Gain Shield. Summon astrolabe crashing on most enemies dealing magic damage. Push astrolabe across board, knocking up enemies."
+      }
+    },
+    {
+      "name": "Ornn",
+      "type": "Melee Tank/Crafter",
+      "traits": ["Space Groove", "Bastion"],
+      "cost": 3,
+      "ability": {
+        "name": "Disco Inferno",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: On combat start, forge a temp completed item or make one Radiant. Active: Gain Shield, breathe fire in a cone."
+      }
+    },
+    {
+      "name": "Pantheon",
+      "type": "Melee Tank",
+      "traits": ["Timebreaker", "Brawler", "Replicator"],
+      "triple_trait": true,
+      "cost": 2,
+      "ability": {
+        "name": "Advanced Defences",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Gain Shield and Durability. Deal physical damage each second to enemies in a cone."
+      }
+    },
+    {
+      "name": "Poppy",
+      "type": "Melee Tank",
+      "traits": ["Meeple", "Bastion"],
+      "cost": 1,
+      "ability": {
+        "name": "Huddle Up!",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Throw her buckler at the farthest enemy dealing magic damage. The buckler then bounces to nearby allies, granting them a Shield."
+      }
+    },
+    {
+      "name": "Pyke",
+      "type": "Melee Assassin",
+      "traits": ["Psionic", "Voyager"],
+      "cost": 2,
+      "ability": {
+        "name": "Marked for Death",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Throw harpoon at furthest enemy, pull them forward. Teleport behind them and cleave for physical damage."
+      }
+    },
+    {
+      "name": "Rammus",
+      "type": "Melee Tank",
+      "traits": ["Meeple", "Bastion"],
+      "cost": 4,
+      "ability": {
+        "name": "—",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "—"
+      }
+    },
+    {
+      "name": "Rek'Sai",
+      "type": "Melee Tank",
+      "traits": ["Primordian", "Brawler"],
+      "cost": 1,
+      "ability": {
+        "name": "Upheaval",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Heal, then briefly knock up adjacent enemies and deal magic damage."
+      }
+    },
+    {
+      "name": "Rhaast",
+      "type": "Melee Bruiser",
+      "traits": ["Redeemer"],
+      "cost": 3,
+      "ability": {
+        "name": "Alien Scythe",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Gain Durability, healing over duration. Slash forward in a line dealing physical damage and knocking enemies up."
+      }
+    },
+    {
+      "name": "Riven",
+      "type": "Melee Assassin",
+      "traits": ["Timebreaker", "Rogue"],
+      "cost": 4,
+      "ability": {
+        "name": "—",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "—"
+      }
+    },
+    {
+      "name": "Samira",
+      "type": "Ranged AD Carry",
+      "traits": ["Space Groove", "Sniper"],
+      "cost": 3,
+      "ability": {
+        "name": "Jump and Jive",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Shoot knocked-up enemies for physical damage. Active: Volley bullets at target dealing physical damage and knocking up."
+      }
+    },
+    {
+      "name": "Shen",
+      "type": "Melee Tank",
+      "traits": ["Bulwark", "Bastion"],
+      "cost": 5,
+      "ability": {
+        "name": "Reality Tear",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Attacks gain stacking bonus magic damage. Active: Gain Shield, slice open a rift dealing damage. Slows enemy AS, buffs ally AS."
+      }
+    },
+    {
+      "name": "Sona",
+      "type": "Ranged Support Caster",
+      "traits": ["Psionic", "Commander", "Shepherd"],
+      "triple_trait": true,
+      "cost": 5,
+      "ability": {
+        "name": "Psionic Crush",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Hurl magnetic debris at targets dealing magic damage. When debris-carrying enemy dies, it passes on."
+      }
+    },
+    {
+      "name": "Tahm Kench",
+      "type": "Melee Tank",
+      "traits": ["Oracle", "Brawler"],
+      "cost": 4,
+      "ability": {
+        "name": "—",
+        "mana_start": 0,
+        "mana_max": 0,
+        "description": "—"
+      }
+    },
+    {
+      "name": "Talon",
+      "type": "Melee Assassin",
+      "traits": ["Stargazer", "Rogue"],
+      "cost": 1,
+      "ability": {
+        "name": "Diviner's Judgment",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Stab the target causing bleed for physical damage. After the attack, leap to the highest HP enemy nearby."
+      }
+    },
+    {
+      "name": "Teemo",
+      "type": "Ranged Caster",
+      "traits": ["Space Groove", "Shepherd"],
+      "cost": 1,
+      "ability": {
+        "name": "Double Time",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Attacks deal bonus magic damage with stacking DoT. Active: Gain Attack Speed for X attacks."
+      }
+    },
+    {
+      "name": "The Mighty Mech",
+      "type": "Melee Tank",
+      "traits": ["Mecha", "Voyager"],
+      "cost": 4,
+      "ability": {
+        "name": "Gravity Matrix",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Enter defensive stance gaining Durability. Attract nearby projectiles and heal. Release shockwave dealing physical damage."
+      }
+    },
+    {
+      "name": "Twisted Fate",
+      "type": "Ranged Caster",
+      "traits": ["Stargazer", "Fateweaver"],
+      "cost": 1,
+      "ability": {
+        "name": "Fate's Gambit",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Draw a card (1-9), throw it at target dealing variable magic damage. Overkill damage bounces to nearest enemy."
+      }
+    },
+    {
+      "name": "Urgot",
+      "type": "Ranged Bruiser",
+      "traits": ["Mecha", "Brawler", "Marauder"],
+      "triple_trait": true,
+      "cost": 3,
+      "ability": {
+        "name": "Unstoppable Dreadnought",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Proximity Blast fires cone damage when enemies approach. Active: Gain Shield and dash behind current target."
+      }
+    },
+    {
+      "name": "Veigar",
+      "type": "Ranged Caster",
+      "traits": ["Meeple", "Replicator"],
+      "cost": 1,
+      "ability": {
+        "name": "Meepteor Shower",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Call down a Meepteor dealing magic damage. Meep Bonus: Additional mini Meepteors on nearby targets."
+      }
+    },
+    {
+      "name": "Vex",
+      "type": "Ranged Caster",
+      "traits": ["Doomer"],
+      "cost": 5,
+      "ability": {
+        "name": "Lend Me a Hand, Shadow!",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Every attack, Shadow strikes a nearby enemy dealing magic damage. Active: Shadow launches empowered strikes."
+      }
+    },
+    {
+      "name": "Viktor",
+      "type": "Ranged Caster",
+      "traits": ["Psionic", "Conduit"],
+      "cost": 3,
+      "ability": {
+        "name": "Psionic Storm",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Channel a psionic storm that follows enemies for X seconds, growing larger and dealing magic damage."
+      }
+    },
+    {
+      "name": "Xayah",
+      "type": "Ranged Attack Carry",
+      "traits": ["Stargazer", "Sniper"],
+      "cost": 4,
+      "ability": {
+        "name": "Stellar Ricochet",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Passive: Attacks bounce X times, leaving Feathers. Active: Gain Attack Speed, then recall all Feathers dealing physical damage."
+      }
+    },
+    {
+      "name": "Zed",
+      "type": "Melee Assassin",
+      "traits": ["Galaxy Hunter"],
+      "cost": 5,
+      "ability": {
+        "name": "Quantum Clone",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Create a clone behind the target with reduced max Health. Clone inherits items, stats, and current Health, and can cast Quantum Clone."
+      }
+    },
+    {
+      "name": "Zoe",
+      "type": "Ranged Caster",
+      "traits": ["Arbiter", "Conduit"],
+      "cost": 2,
+      "ability": {
+        "name": "Paddle Star",
+        "mana_start": 0,
+        "mana_max": 60,
+        "description": "Fire a paddle star dealing magic damage. It redirects to a distant enemy, repeating damage X times."
+      }
+    }
+  ]
+}

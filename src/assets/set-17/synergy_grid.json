@@ -1,0 +1,332 @@
+{
+  "classes": [
+    {
+      "name": "Bastion",
+      "description": "Team gains 12 Armor & MR. Bastions gain more, doubled first 10s.",
+      "champions": ["Aatrox", "Poppy", "Jax", "Ornn", "Rammus", "Shen"],
+      "bonuses": {
+        "2": "+16",
+        "4": "+35",
+        "6": "+60 + non-Bastions gain 20"
+      }
+    },
+    {
+      "name": "Brawler",
+      "description": "Team gains 7% HP. Brawlers gain more.",
+      "champions": ["Cho'Gath", "Rek'Sai", "Gragas", "Pantheon", "Maokai", "Urgot", "Tahm Kench"],
+      "bonuses": {
+        "2": "+25%",
+        "4": "+45%",
+        "6": "+65%"
+      }
+    },
+    {
+      "name": "Challenger",
+      "description": "Team gains 10% AS. On kill, dash + 50% AS 2.5s.",
+      "champions": ["Bel'Veth", "Jinx", "Diana", "Kindred"],
+      "bonuses": {
+        "2": "15%",
+        "3": "22%",
+        "4": "30%",
+        "5": "40%"
+      }
+    },
+    {
+      "name": "Conduit",
+      "description": "Innate: +20% Mana from all sources. Team gains Mana Regen.",
+      "champions": ["Mordekaiser", "Zoe", "Viktor", "Aurelion Sol", "Bard"],
+      "bonuses": {
+        "2": "1/3",
+        "4": "2/5"
+      }
+    },
+    {
+      "name": "Fateweaver",
+      "description": "Innate: Precision (ability dmg can crit).",
+      "champions": ["Caitlyn", "Twisted Fate", "Milio", "Corki"],
+      "bonuses": {
+        "2": "Lucky chance effects",
+        "4": "+20% Crit Chance & Damage, crits are Lucky"
+      }
+    },
+    {
+      "name": "Marauder",
+      "description": "5% Omnivamp. Overhealing → Shield.",
+      "champions": ["Akali", "Bel'Veth", "Urgot", "Master Yi", "Fiora"],
+      "bonuses": {
+        "2": "5%, 20% AD",
+        "4": "7%, 40% AD",
+        "6": "10%, 60% AD"
+      }
+    },
+    {
+      "name": "Replicator",
+      "description": "Abilities occur a second time at reduced effectiveness.",
+      "champions": ["Lissandra", "Veigar", "Pantheon", "Lulu", "Nami"],
+      "bonuses": {
+        "2": "22%",
+        "4": "45%"
+      }
+    },
+    {
+      "name": "Rogue",
+      "description": "Gain AD & AP. At 50% HP, slip into shadows.",
+      "champions": ["Briar", "Talon", "Gwen", "Fizz", "Kai'Sa", "Riven"],
+      "bonuses": {
+        "2": "15%",
+        "3": "30%",
+        "4": "45%",
+        "5": "60%"
+      }
+    },
+    {
+      "name": "Shepherd",
+      "description": "Summon Bond of the Stars.",
+      "champions": ["Lissandra", "Teemo", "Meepsie", "Illaoi", "LeBlanc", "Sona"],
+      "bonuses": {
+        "3": "Summon Bia",
+        "5": "Summon Bayin",
+        "7": "Bond grows deeper"
+      }
+    },
+    {
+      "name": "Sniper",
+      "description": "Damage Amp per hex.",
+      "champions": ["Ezreal", "Gnar", "Samira", "Xayah", "Jhin"],
+      "bonuses": {
+        "2": "18% +2%/hex",
+        "3": "24% +3%/hex",
+        "4": "28% +4%/hex"
+      }
+    },
+    {
+      "name": "Vanguard",
+      "description": "5% Durability while Shielded. Shield at combat start & 50% HP.",
+      "champions": ["Leona", "Nasus", "Mordekaiser", "Illaoi", "Nunu", "Blitzcrank"],
+      "bonuses": {
+        "2": "16%",
+        "4": "28%",
+        "6": "40% + 10% DR"
+      }
+    },
+    {
+      "name": "Voyager",
+      "description": "Tanks get Shield, others get Damage Amp. Voyagers double.",
+      "champions": ["Meepsie", "Pyke", "Aurora", "Karma", "The Mighty Mech"],
+      "bonuses": {
+        "2": "175, 9%",
+        "3": "250, 15%",
+        "4": "350, 18%",
+        "5": "500, 22%",
+        "6": "700, 27%"
+      }
+    }
+  ],
+  "origins": [
+    {
+      "name": "Anima",
+      "description": "Lose streak trait. Gain 15 Tech on losses, plus 5× loss streak length. Gain 2 Tech per Anima takedown. At 100 Tech, prototype Anima Weapons.",
+      "champions": ["Briar", "Jinx", "Aurora", "Illaoi", "Fiora"],
+      "bonuses": {
+        "3": "At 100 Tech, prototype Anima Weapons",
+        "5": "After winning, gain loot!"
+      }
+    },
+    {
+      "name": "Arbiter",
+      "description": "Scribe a unique divine law — choose a cause and effect for Arbiters.",
+      "champions": ["Leona", "Zoe", "Diana", "LeBlanc"],
+      "bonuses": {
+        "2": "Scribe a unique divine law",
+        "3": "Effects are stronger"
+      }
+    },
+    {
+      "name": "Dark Star",
+      "description": "Create black holes that consume weakened enemies.",
+      "champions": ["Cho'Gath", "Lissandra", "Mordekaiser", "Kai'Sa", "Karma", "Jhin"],
+      "bonuses": {
+        "2": "Create a black hole that consumes enemies at 10% max HP",
+        "4": "+40% effectiveness",
+        "6": "Strongest Dark Star goes supermassive (100% effectiveness, 2 minor black holes)",
+        "9": "All supermassive. At level 10, CONSUME EVERYONE"
+      }
+    },
+    {
+      "name": "Mecha",
+      "description": "Mecha units can transform into Ultimate form.",
+      "champions": ["Urgot", "Aurelion Sol", "The Mighty Mech"],
+      "bonuses": {
+        "3": "20% damage amp",
+        "4": "35% damage amp",
+        "6": "+1 max team size"
+      }
+    },
+    {
+      "name": "Meeple",
+      "description": "Attract Meeps that empower abilities.",
+      "champions": ["Poppy", "Veigar", "Gnar", "Meepsie", "Fizz", "Corki", "Rammus", "Bard"],
+      "bonuses": {
+        "3": "2 Meeps, 2%, 125 HP",
+        "5": "3 Meeps, 3%, 250 HP",
+        "7": "4 Meeps, 4%, 400 HP + Cloning Slot",
+        "10": "6 Meeps, 6%, 500 HP + SUMMON THE FOUR MEEPLORDS!"
+      }
+    },
+    {
+      "name": "N.O.V.A.",
+      "description": "6 seconds into combat, grant a power surge.",
+      "champions": ["Aatrox", "Caitlyn", "Akali", "Maokai", "Kindred"],
+      "bonuses": {
+        "2": "Grant a power surge",
+        "5": "Gain Striker selector"
+      }
+    },
+    {
+      "name": "Primordian",
+      "description": "8% damage taken → damage dealt.",
+      "champions": ["Briar", "Rek'Sai", "Bel'Veth"],
+      "bonuses": {
+        "2": "Spawn Swarmlings",
+        "3": "45% more Swarmlings + gain random champ each round"
+      }
+    },
+    {
+      "name": "Psionic",
+      "description": "Gain Psionic items.",
+      "champions": ["Gragas", "Pyke", "Viktor", "Master Yi", "Sona"],
+      "bonuses": {
+        "2": "Gain Psionic items",
+        "4": "If holder is Psionic, items gain extra effects"
+      }
+    },
+    {
+      "name": "Space Groove",
+      "description": "Groovians enter The Groove.",
+      "champions": ["Nasus", "Teemo", "Gwen", "Ornn", "Samira", "Nami", "Blitzcrank"],
+      "bonuses": {
+        "1": "Enter The Groove",
+        "3": "Start in Groove 3s",
+        "5": "+3% stacking AD/AP per second",
+        "7": "+10% all effects",
+        "10": "THE GROOVE"
+      }
+    },
+    {
+      "name": "Stargazer",
+      "description": "Chart different constellation each game. Stargazers in empowered hexes gain bonuses.",
+      "champions": ["Talon", "Twisted Fate", "Jax", "Lulu", "Nunu", "Xayah"],
+      "bonuses": {
+        "3": "Gain empowered hex bonuses",
+        "5": "Stronger constellation bonuses",
+        "7": "Maximum constellation bonuses"
+      }
+    },
+    {
+      "name": "Timebreaker",
+      "description": "Loses grant free rerolls, wins store XP.",
+      "champions": ["Ezreal", "Milio", "Pantheon", "Riven"],
+      "bonuses": {
+        "2": "Lose → free rerolls; Win → store XP",
+        "3": "+15% AS",
+        "4": "Timebreakers gain 50% AS"
+      }
+    },
+    {
+      "name": "Bulwark",
+      "description": "Summon a placeable relic. Combat start: grants adjacent allies 10% max HP Shield and 10% AS.",
+      "champions": ["Shen"],
+      "bonuses": {
+        "1": "Summon a relic that shields and buffs adjacent allies"
+      }
+    },
+    {
+      "name": "Commander",
+      "description": "Gain a random Command Mod every 2 rounds to alter ally combat behavior.",
+      "champions": ["Sona"],
+      "bonuses": {
+        "1": "Gain a random Command Mod every 2 rounds"
+      }
+    },
+    {
+      "name": "Dark Lady",
+      "description": "Allies take 5% less ability damage, increased to 10% while Morgana is in Dark Form.",
+      "champions": ["Morgana"],
+      "bonuses": {
+        "1": "Allies take less ability damage"
+      }
+    },
+    {
+      "name": "Divine Duelist",
+      "description": "Tactician heals 15% of player damage from winning. Fiora always wins a 1v1 duel.",
+      "champions": ["Fiora"],
+      "bonuses": {
+        "1": "Fiora always wins a 1v1 duel"
+      }
+    },
+    {
+      "name": "Doomer",
+      "description": "Combat Start: Mark all enemies with Doom. First damage steals 12% AD & AP for Vex.",
+      "champions": ["Vex"],
+      "bonuses": {
+        "1": "Mark all enemies with Doom"
+      }
+    },
+    {
+      "name": "Eradicator",
+      "description": "Enemies have 10% less Armor and Magic Resist.",
+      "champions": ["Jhin"],
+      "bonuses": {
+        "1": "Enemies have less Armor and Magic Resist"
+      }
+    },
+    {
+      "name": "Factory New",
+      "description": "After combat, open an armory for permanent upgrade for Graves.",
+      "champions": ["Graves"],
+      "bonuses": {
+        "1": "Open an armory for Graves after combat"
+      }
+    },
+    {
+      "name": "Galaxy Hunter",
+      "description": "While at least one clone is alive, Zed gains 40% bonus AD.",
+      "champions": ["Zed"],
+      "bonuses": {
+        "1": "Zed gains bonus AD while a clone is alive"
+      }
+    },
+    {
+      "name": "Gun Goddess",
+      "description": "Choose between Conduit, Challenger, or Replicator Mode.",
+      "champions": ["Miss Fortune"],
+      "bonuses": {
+        "1": "Choose Conduit, Challenger, or Replicator Mode"
+      }
+    },
+    {
+      "name": "Oracle",
+      "description": "Every 3 rounds, Tahm Kench grants a reward!",
+      "champions": ["Tahm Kench"],
+      "bonuses": {
+        "1": "Tahm Kench grants a reward every 3 rounds"
+      }
+    },
+    {
+      "name": "Party Animal",
+      "description": "At 45% HP, become untargetable and repair 15% max HP/s. At full HP, enter The Groove.",
+      "champions": ["Blitzcrank"],
+      "bonuses": {
+        "1": "Become untargetable at low HP and repair to full"
+      }
+    },
+    {
+      "name": "Redeemer",
+      "description": "For each non-unique active trait, team gains 2%/3%/4% AS and 2/2.5/3 Armor & MR.",
+      "champions": ["Rhaast"],
+      "bonuses": {
+        "1": "Gain bonuses for each non-unique active trait"
+      }
+    }
+  ]
+}

@@ -27,6 +27,10 @@ import emblemsData16 from "../assets/set-16/emblems.json";
 import synergyDataRaw16 from "../assets/set-16/synergy_grid.json";
 import unitsDataRaw16 from "../assets/set-16/units.json";
 import compositionsDataRaw16 from "../assets/set-16/compositions.json";
+import emblemsData17 from "../assets/set-17/emblems.json";
+import synergyDataRaw17 from "../assets/set-17/synergy_grid.json";
+import unitsDataRaw17 from "../assets/set-17/units.json";
+import compositionsDataRaw17 from "../assets/set-17/compositions.json";
 
 // Unit types in order of frequency
 const UNIT_TYPES = [
@@ -95,7 +99,7 @@ export const SynergyGrid: React.FC = () => {
   >([]);
   const [compositionFilterInput, setCompositionFilterInput] =
     useState<string>("");
-  const [selectedSet, setSelectedSet] = useState<"7.5" | "16">("7.5");
+  const [selectedSet, setSelectedSet] = useState<"7.5" | "16" | "17">("17");
 
   useEffect(() => {
     const loadData = async () => {
@@ -120,11 +124,16 @@ export const SynergyGrid: React.FC = () => {
           unitsDataRaw = unitsDataRaw75;
           compositionsDataRaw = compositionsDataRaw75;
           emblemsData = emblemsData75;
-        } else {
+        } else if (selectedSet === "16") {
           synergyDataRaw = synergyDataRaw16;
           unitsDataRaw = unitsDataRaw16;
           compositionsDataRaw = compositionsDataRaw16;
           emblemsData = emblemsData16;
+        } else {
+          synergyDataRaw = synergyDataRaw17;
+          unitsDataRaw = unitsDataRaw17;
+          compositionsDataRaw = compositionsDataRaw17;
+          emblemsData = emblemsData17;
         }
 
         setSynergyData(synergyDataRaw as unknown as SynergyData);
@@ -420,7 +429,12 @@ export const SynergyGrid: React.FC = () => {
     const emblemName = tag.text;
 
     // Get current emblem data based on selected set
-    const currentEmblemsData = selectedSet === "7.5" ? emblemsData75 : emblemsData16;
+    const currentEmblemsData =
+      selectedSet === "7.5"
+        ? emblemsData75
+        : selectedSet === "16"
+          ? emblemsData16
+          : emblemsData17;
 
     // Check if this is a valid emblem
     const isValidEmblem = currentEmblemsData.includes(emblemName);
@@ -786,9 +800,25 @@ export const SynergyGrid: React.FC = () => {
     <div className="min-h-screen bg-slate-800 px-8 pt-4 pb-8 flex flex-col">
       <div className="flex items-center justify-center gap-4 mb-4">
         <h1 className="text-2xl font-bold text-white text-center">
-          TFT Set {selectedSet === "7.5" ? "Revival 7.5" : "16"} Synergy Grid
+          TFT Set{" "}
+          {selectedSet === "7.5"
+            ? "Revival 7.5"
+            : selectedSet === "16"
+              ? "16"
+              : "17: Space Gods"}{" "}
+          Synergy Grid
         </h1>
         <div className="flex items-center gap-2 bg-slate-700 rounded-lg p-1">
+          <button
+            onClick={() => setSelectedSet("17")}
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+              selectedSet === "17"
+                ? "bg-blue-600 text-white"
+                : "text-gray-300 hover:text-white"
+            }`}
+          >
+            Set 17
+          </button>
           <button
             onClick={() => setSelectedSet("7.5")}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -1300,7 +1330,13 @@ export const SynergyGrid: React.FC = () => {
           )}
           <CustomTagInput
             tags={selectedEmblemTags}
-            suggestions={(selectedSet === "7.5" ? emblemsData75 : emblemsData16).map((emblem, index) => ({
+            suggestions={(
+              selectedSet === "7.5"
+                ? emblemsData75
+                : selectedSet === "16"
+                  ? emblemsData16
+                  : emblemsData17
+            ).map((emblem, index) => ({
               id: `emblem-${index}`,
               text: emblem,
               className: "",
