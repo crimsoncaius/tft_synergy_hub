@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import type {
   Unit,
   Trait,
@@ -27,19 +27,6 @@ import emblemsData17 from "../assets/set-17/emblems.json";
 import synergyDataRaw17 from "../assets/set-17/synergy_grid.json";
 import unitsDataRaw17 from "../assets/set-17/units.json";
 import compositionsDataRaw17 from "../assets/set-17/compositions.json";
-
-// Unit types in order of frequency
-const UNIT_TYPES = [
-  "Magic Caster",
-  "Magic Tank",
-  "Attack Fighter",
-  "Magic Fighter",
-  "Attack Caster",
-  "Attack Tank",
-  "Attack Marksman",
-  "Magic Marksman",
-  "Hybrid Caster",
-];
 
 export const SynergyGrid: React.FC = () => {
   const [synergyData, setSynergyData] = useState<SynergyData | null>(null);
@@ -96,6 +83,18 @@ export const SynergyGrid: React.FC = () => {
   const [compositionFilterInput, setCompositionFilterInput] =
     useState<string>("");
   const [selectedSet, setSelectedSet] = useState<"7.5" | "17">("17");
+
+  const unitTypes = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          units
+            .map((unit) => unit.type)
+            .filter((type): type is string => Boolean(type))
+        )
+      ).sort((a, b) => a.localeCompare(b)),
+    [units]
+  );
 
   useEffect(() => {
     const loadData = async () => {
@@ -1093,21 +1092,9 @@ export const SynergyGrid: React.FC = () => {
                 Clear Filters
               </button>
             )}
-            {UNIT_TYPES.map((type) => {
+            {unitTypes.map((type) => {
               const isSelected = selectedTypes.has(type);
-              // Get unique units by type (avoid double counting from grid cells)
-              const uniqueUnitsByType = new Set(
-                Object.values(gridData)
-                  .flatMap((origin) =>
-                    Object.values(origin).flatMap((cell) =>
-                      cell.champions.filter(
-                        (champion) => champion.type === type
-                      )
-                    )
-                  )
-                  .map((champion) => champion.name)
-              );
-              const count = uniqueUnitsByType.size;
+              const count = units.filter((unit) => unit.type === type).length;
 
               return (
                 <button
