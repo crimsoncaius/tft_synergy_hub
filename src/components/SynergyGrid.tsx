@@ -671,8 +671,8 @@ export const SynergyGrid: React.FC = () => {
 
         if (originName !== MISC_BUCKET && className === MISC_BUCKET) {
           return (
-            classes.length === 0 &&
-            origins[0] === originName
+            origins[0] === originName &&
+            classes.length === 0
           );
         }
 
@@ -683,7 +683,10 @@ export const SynergyGrid: React.FC = () => {
           );
         }
 
-        return origins.length === 0 && classes.length === 0;
+        return (
+          origins.every((o) => o === MISC_BUCKET) &&
+          classes.length === 0
+        );
       }
 
       if (!hasSelectedMatch) {
