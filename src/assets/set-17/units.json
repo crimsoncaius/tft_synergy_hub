@@ -2,8 +2,11 @@
   "units": [
     {
       "name": "Aatrox",
-      "type": "Melee Tank",
-      "traits": ["N.O.V.A.", "Bastion"],
+      "type": "Attack Tank",
+      "traits": [
+        "N.O.V.A.",
+        "Bastion"
+      ],
       "cost": 1,
       "ability": {
         "name": "Stellar Slash",
@@ -14,8 +17,11 @@
     },
     {
       "name": "Akali",
-      "type": "Melee Assassin",
-      "traits": ["N.O.V.A.", "Marauder"],
+      "type": "Attack Fighter",
+      "traits": [
+        "N.O.V.A.",
+        "Marauder"
+      ],
       "cost": 2,
       "ability": {
         "name": "Star Strike",
@@ -26,8 +32,11 @@
     },
     {
       "name": "Aurelion Sol",
-      "type": "Ranged Caster",
-      "traits": ["Mecha", "Conduit"],
+      "type": "Magic Caster",
+      "traits": [
+        "Mecha",
+        "Conduit"
+      ],
       "cost": 4,
       "ability": {
         "name": "Deathbeam",
@@ -38,8 +47,11 @@
     },
     {
       "name": "Aurora",
-      "type": "Ranged Caster",
-      "traits": ["Anima", "Voyager"],
+      "type": "Magic Caster",
+      "traits": [
+        "Anima",
+        "Voyager"
+      ],
       "cost": 3,
       "ability": {
         "name": "Hopped-Up Hacks",
@@ -50,8 +62,11 @@
     },
     {
       "name": "Bard",
-      "type": "Ranged Caster",
-      "traits": ["Meeple", "Conduit"],
+      "type": "Magic Caster",
+      "traits": [
+        "Meeple",
+        "Conduit"
+      ],
       "cost": 5,
       "ability": {
         "name": "Ultra Friendly Object",
@@ -62,8 +77,12 @@
     },
     {
       "name": "Bel'Veth",
-      "type": "Melee Attack Carry",
-      "traits": ["Primordian", "Challenger", "Marauder"],
+      "type": "Attack Fighter",
+      "traits": [
+        "Primordian",
+        "Challenger",
+        "Marauder"
+      ],
       "triple_trait": true,
       "cost": 2,
       "ability": {
@@ -75,8 +94,12 @@
     },
     {
       "name": "Blitzcrank",
-      "type": "Melee Tank",
-      "traits": ["Party Animal", "Space Groove", "Vanguard"],
+      "type": "Magic Fighter",
+      "traits": [
+        "Party Animal",
+        "Space Groove",
+        "Vanguard"
+      ],
       "triple_trait": true,
       "cost": 5,
       "ability": {
@@ -88,8 +111,12 @@
     },
     {
       "name": "Briar",
-      "type": "Melee Assassin",
-      "traits": ["Anima", "Primordian", "Rogue"],
+      "type": "Attack Fighter",
+      "traits": [
+        "Anima",
+        "Primordian",
+        "Rogue"
+      ],
       "triple_trait": true,
       "cost": 1,
       "ability": {
@@ -101,8 +128,11 @@
     },
     {
       "name": "Caitlyn",
-      "type": "Ranged Caster",
-      "traits": ["N.O.V.A.", "Fateweaver"],
+      "type": "Attack Specialist",
+      "traits": [
+        "N.O.V.A.",
+        "Fateweaver"
+      ],
       "cost": 1,
       "ability": {
         "name": "Aim For The Head",
@@ -113,8 +143,11 @@
     },
     {
       "name": "Cho'Gath",
-      "type": "Melee Tank",
-      "traits": ["Dark Star", "Brawler"],
+      "type": "Magic Tank",
+      "traits": [
+        "Dark Star",
+        "Brawler"
+      ],
       "cost": 1,
       "ability": {
         "name": "Devour",
@@ -125,8 +158,11 @@
     },
     {
       "name": "Corki",
-      "type": "Ranged AD Caster",
-      "traits": ["Meeple", "Fateweaver"],
+      "type": "Attack Caster",
+      "traits": [
+        "Meeple",
+        "Fateweaver"
+      ],
       "cost": 4,
       "ability": {
         "name": "Asteroid Blaster",
@@ -137,8 +173,11 @@
     },
     {
       "name": "Diana",
-      "type": "Melee Attack Carry",
-      "traits": ["Arbiter", "Challenger"],
+      "type": "Magic Fighter",
+      "traits": [
+        "Arbiter",
+        "Challenger"
+      ],
       "cost": 3,
       "ability": {
         "name": "Pale Cascade",
@@ -149,8 +188,11 @@
     },
     {
       "name": "Ezreal",
-      "type": "Ranged AD Caster",
-      "traits": ["Timebreaker", "Sniper"],
+      "type": "Attack Caster",
+      "traits": [
+        "Timebreaker",
+        "Sniper"
+      ],
       "cost": 1,
       "ability": {
         "name": "Temporal Shot",
@@ -161,8 +203,12 @@
     },
     {
       "name": "Fiora",
-      "type": "Melee Attack Carry",
-      "traits": ["Anima", "Divine Duelist", "Marauder"],
+      "type": "Attack Fighter",
+      "traits": [
+        "Anima",
+        "Divine Duelist",
+        "Marauder"
+      ],
       "triple_trait": true,
       "cost": 5,
       "ability": {
@@ -174,8 +220,11 @@
     },
     {
       "name": "Fizz",
-      "type": "Melee Assassin",
-      "traits": ["Meeple", "Rogue"],
+      "type": "Attack Assassin",
+      "traits": [
+        "Meeple",
+        "Rogue"
+      ],
       "cost": 3,
       "ability": {
         "name": "—",
@@ -186,8 +235,11 @@
     },
     {
       "name": "Gnar",
-      "type": "Ranged AD Carry",
-      "traits": ["Meeple", "Sniper"],
+      "type": "Attack Marksman",
+      "traits": [
+        "Meeple",
+        "Sniper"
+      ],
       "cost": 2,
       "ability": {
         "name": "Slingshot Maneuver",
@@ -198,8 +250,11 @@
     },
     {
       "name": "Gragas",
-      "type": "Melee Tank",
-      "traits": ["Psionic", "Brawler"],
+      "type": "Magic Tank",
+      "traits": [
+        "Psionic",
+        "Brawler"
+      ],
       "cost": 2,
       "ability": {
         "name": "Chemical Rage",
@@ -210,8 +265,10 @@
     },
     {
       "name": "Graves",
-      "type": "Ranged AD Carry",
-      "traits": ["Factory New"],
+      "type": "Attack Marksman",
+      "traits": [
+        "Factory New"
+      ],
       "cost": 5,
       "ability": {
         "name": "—",
@@ -222,8 +279,11 @@
     },
     {
       "name": "Gwen",
-      "type": "Melee Assassin",
-      "traits": ["Space Groove", "Rogue"],
+      "type": "Magic Assassin",
+      "traits": [
+        "Space Groove",
+        "Rogue"
+      ],
       "cost": 2,
       "ability": {
         "name": "Dance n' Dice",
@@ -234,8 +294,12 @@
     },
     {
       "name": "Illaoi",
-      "type": "Melee Tank",
-      "traits": ["Anima", "Vanguard", "Shepherd"],
+      "type": "Magic Tank",
+      "traits": [
+        "Anima",
+        "Vanguard",
+        "Shepherd"
+      ],
       "triple_trait": true,
       "cost": 3,
       "ability": {
@@ -247,8 +311,11 @@
     },
     {
       "name": "Jax",
-      "type": "Melee Tank",
-      "traits": ["Stargazer", "Bastion"],
+      "type": "Attack Fighter",
+      "traits": [
+        "Stargazer",
+        "Bastion"
+      ],
       "cost": 2,
       "ability": {
         "name": "—",
@@ -259,8 +326,12 @@
     },
     {
       "name": "Jhin",
-      "type": "Ranged AD Carry",
-      "traits": ["Dark Star", "Eradicator", "Sniper"],
+      "type": "Attack Marksman",
+      "traits": [
+        "Dark Star",
+        "Eradicator",
+        "Sniper"
+      ],
       "triple_trait": true,
       "cost": 5,
       "ability": {
@@ -272,8 +343,11 @@
     },
     {
       "name": "Jinx",
-      "type": "Ranged AD Carry",
-      "traits": ["Anima", "Challenger"],
+      "type": "Attack Marksman",
+      "traits": [
+        "Anima",
+        "Challenger"
+      ],
       "cost": 2,
       "ability": {
         "name": "Fishbones!",
@@ -285,7 +359,10 @@
     {
       "name": "Kai'Sa",
       "type": "Ranged Assassin",
-      "traits": ["Dark Star", "Rogue"],
+      "traits": [
+        "Dark Star",
+        "Rogue"
+      ],
       "cost": 3,
       "ability": {
         "name": "Bullet Cluster",
@@ -296,8 +373,11 @@
     },
     {
       "name": "Karma",
-      "type": "Ranged Caster",
-      "traits": ["Dark Star", "Voyager"],
+      "type": "Magic Caster",
+      "traits": [
+        "Dark Star",
+        "Voyager"
+      ],
       "cost": 4,
       "ability": {
         "name": "Singularity",
@@ -308,8 +388,11 @@
     },
     {
       "name": "Kindred",
-      "type": "Ranged Attack Carry",
-      "traits": ["N.O.V.A.", "Challenger"],
+      "type": "Attack Specialist",
+      "traits": [
+        "N.O.V.A.",
+        "Challenger"
+      ],
       "cost": 4,
       "ability": {
         "name": "Cosmic Pursuit",
@@ -321,7 +404,10 @@
     {
       "name": "LeBlanc",
       "type": "Ranged Caster",
-      "traits": ["Arbiter", "Shepherd"],
+      "traits": [
+        "Arbiter",
+        "Shepherd"
+      ],
       "cost": 4,
       "ability": {
         "name": "Fracture Reality",
@@ -332,8 +418,11 @@
     },
     {
       "name": "Leona",
-      "type": "Melee Tank",
-      "traits": ["Arbiter", "Vanguard"],
+      "type": "Magic Tank",
+      "traits": [
+        "Arbiter",
+        "Vanguard"
+      ],
       "cost": 1,
       "ability": {
         "name": "Shield of Daybreak",
@@ -344,8 +433,12 @@
     },
     {
       "name": "Lissandra",
-      "type": "Ranged Caster",
-      "traits": ["Dark Star", "Shepherd", "Replicator"],
+      "type": "Magic Caster",
+      "traits": [
+        "Dark Star",
+        "Shepherd",
+        "Replicator"
+      ],
       "triple_trait": true,
       "cost": 1,
       "ability": {
@@ -357,8 +450,11 @@
     },
     {
       "name": "Lulu",
-      "type": "Ranged Support Caster",
-      "traits": ["Stargazer", "Replicator"],
+      "type": "Magic Caster",
+      "traits": [
+        "Stargazer",
+        "Replicator"
+      ],
       "cost": 3,
       "ability": {
         "name": "It's Raining Stars",
@@ -369,8 +465,11 @@
     },
     {
       "name": "Maokai",
-      "type": "Melee Tank",
-      "traits": ["N.O.V.A.", "Brawler"],
+      "type": "Magic Tank",
+      "traits": [
+        "N.O.V.A.",
+        "Brawler"
+      ],
       "cost": 3,
       "ability": {
         "name": "Grasp of Convergence",
@@ -381,8 +480,11 @@
     },
     {
       "name": "Master Yi",
-      "type": "Melee Attack Carry",
-      "traits": ["Psionic", "Marauder"],
+      "type": "Attack Fighter",
+      "traits": [
+        "Psionic",
+        "Marauder"
+      ],
       "cost": 4,
       "ability": {
         "name": "Psi Strikes",
@@ -393,8 +495,12 @@
     },
     {
       "name": "Meepsie",
-      "type": "Support Caster",
-      "traits": ["Meeple", "Shepherd", "Voyager"],
+      "type": "Support",
+      "traits": [
+        "Meeple",
+        "Shepherd",
+        "Voyager"
+      ],
       "triple_trait": true,
       "cost": 2,
       "ability": {
@@ -406,8 +512,11 @@
     },
     {
       "name": "Milio",
-      "type": "Ranged Caster",
-      "traits": ["Timebreaker", "Fateweaver"],
+      "type": "Magic Caster",
+      "traits": [
+        "Timebreaker",
+        "Fateweaver"
+      ],
       "cost": 2,
       "ability": {
         "name": "ULTRA MEGA TIME KICK",
@@ -418,8 +527,10 @@
     },
     {
       "name": "Miss Fortune",
-      "type": "Ranged AD Carry",
-      "traits": ["Gun Goddess"],
+      "type": "Attack Marksman",
+      "traits": [
+        "Gun Goddess"
+      ],
       "cost": 3,
       "ability": {
         "name": "Gun Goddess Arsenal",
@@ -430,8 +541,12 @@
     },
     {
       "name": "Mordekaiser",
-      "type": "Melee Tank/Caster",
-      "traits": ["Dark Star", "Conduit", "Vanguard"],
+      "type": "Magic Tank",
+      "traits": [
+        "Dark Star",
+        "Conduit",
+        "Vanguard"
+      ],
       "triple_trait": true,
       "cost": 2,
       "ability": {
@@ -443,8 +558,10 @@
     },
     {
       "name": "Morgana",
-      "type": "Ranged Caster",
-      "traits": ["Dark Lady"],
+      "type": "Magic Fighter",
+      "traits": [
+        "Dark Lady"
+      ],
       "cost": 5,
       "ability": {
         "name": "Dark Form",
@@ -455,8 +572,11 @@
     },
     {
       "name": "Nami",
-      "type": "Ranged Support Caster",
-      "traits": ["Space Groove", "Replicator"],
+      "type": "Magic Caster",
+      "traits": [
+        "Space Groove",
+        "Replicator"
+      ],
       "cost": 4,
       "ability": {
         "name": "Bubble Pop",
@@ -467,8 +587,11 @@
     },
     {
       "name": "Nasus",
-      "type": "Melee Tank",
-      "traits": ["Space Groove", "Vanguard"],
+      "type": "Magic Tank",
+      "traits": [
+        "Space Groove",
+        "Vanguard"
+      ],
       "cost": 1,
       "ability": {
         "name": "Groovin' Susan",
@@ -479,8 +602,11 @@
     },
     {
       "name": "Nunu",
-      "type": "Melee Tank",
-      "traits": ["Stargazer", "Vanguard"],
+      "type": "Magic Tank",
+      "traits": [
+        "Stargazer",
+        "Vanguard"
+      ],
       "cost": 4,
       "ability": {
         "name": "Calamity",
@@ -491,8 +617,11 @@
     },
     {
       "name": "Ornn",
-      "type": "Melee Tank/Crafter",
-      "traits": ["Space Groove", "Bastion"],
+      "type": "Magic Tank",
+      "traits": [
+        "Space Groove",
+        "Bastion"
+      ],
       "cost": 3,
       "ability": {
         "name": "Disco Inferno",
@@ -503,8 +632,12 @@
     },
     {
       "name": "Pantheon",
-      "type": "Melee Tank",
-      "traits": ["Timebreaker", "Brawler", "Replicator"],
+      "type": "Attack Tank",
+      "traits": [
+        "Timebreaker",
+        "Brawler",
+        "Replicator"
+      ],
       "triple_trait": true,
       "cost": 2,
       "ability": {
@@ -516,8 +649,11 @@
     },
     {
       "name": "Poppy",
-      "type": "Melee Tank",
-      "traits": ["Meeple", "Bastion"],
+      "type": "Attack Tank",
+      "traits": [
+        "Meeple",
+        "Bastion"
+      ],
       "cost": 1,
       "ability": {
         "name": "Huddle Up!",
@@ -528,8 +664,11 @@
     },
     {
       "name": "Pyke",
-      "type": "Melee Assassin",
-      "traits": ["Psionic", "Voyager"],
+      "type": "Attack Assassin",
+      "traits": [
+        "Psionic",
+        "Voyager"
+      ],
       "cost": 2,
       "ability": {
         "name": "Marked for Death",
@@ -540,8 +679,11 @@
     },
     {
       "name": "Rammus",
-      "type": "Melee Tank",
-      "traits": ["Meeple", "Bastion"],
+      "type": "Attack Tank",
+      "traits": [
+        "Meeple",
+        "Bastion"
+      ],
       "cost": 4,
       "ability": {
         "name": "—",
@@ -552,8 +694,11 @@
     },
     {
       "name": "Rek'Sai",
-      "type": "Melee Tank",
-      "traits": ["Primordian", "Brawler"],
+      "type": "Magic Tank",
+      "traits": [
+        "Primordian",
+        "Brawler"
+      ],
       "cost": 1,
       "ability": {
         "name": "Upheaval",
@@ -564,8 +709,10 @@
     },
     {
       "name": "Rhaast",
-      "type": "Melee Bruiser",
-      "traits": ["Redeemer"],
+      "type": "Attack Fighter",
+      "traits": [
+        "Redeemer"
+      ],
       "cost": 3,
       "ability": {
         "name": "Alien Scythe",
@@ -576,8 +723,11 @@
     },
     {
       "name": "Riven",
-      "type": "Melee Assassin",
-      "traits": ["Timebreaker", "Rogue"],
+      "type": "Hybrid Fighter",
+      "traits": [
+        "Timebreaker",
+        "Rogue"
+      ],
       "cost": 4,
       "ability": {
         "name": "—",
@@ -588,8 +738,11 @@
     },
     {
       "name": "Samira",
-      "type": "Ranged AD Carry",
-      "traits": ["Space Groove", "Sniper"],
+      "type": "Attack Marksman",
+      "traits": [
+        "Space Groove",
+        "Sniper"
+      ],
       "cost": 3,
       "ability": {
         "name": "Jump and Jive",
@@ -600,8 +753,11 @@
     },
     {
       "name": "Shen",
-      "type": "Melee Tank",
-      "traits": ["Bulwark", "Bastion"],
+      "type": "Magic Fighter",
+      "traits": [
+        "Bulwark",
+        "Bastion"
+      ],
       "cost": 5,
       "ability": {
         "name": "Reality Tear",
@@ -612,8 +768,12 @@
     },
     {
       "name": "Sona",
-      "type": "Ranged Support Caster",
-      "traits": ["Psionic", "Commander", "Shepherd"],
+      "type": "Magic Support",
+      "traits": [
+        "Psionic",
+        "Commander",
+        "Shepherd"
+      ],
       "triple_trait": true,
       "cost": 5,
       "ability": {
@@ -625,8 +785,11 @@
     },
     {
       "name": "Tahm Kench",
-      "type": "Melee Tank",
-      "traits": ["Oracle", "Brawler"],
+      "type": "Attack Tank",
+      "traits": [
+        "Oracle",
+        "Brawler"
+      ],
       "cost": 4,
       "ability": {
         "name": "—",
@@ -637,8 +800,11 @@
     },
     {
       "name": "Talon",
-      "type": "Melee Assassin",
-      "traits": ["Stargazer", "Rogue"],
+      "type": "Attack Assassin",
+      "traits": [
+        "Stargazer",
+        "Rogue"
+      ],
       "cost": 1,
       "ability": {
         "name": "Diviner's Judgment",
@@ -649,8 +815,11 @@
     },
     {
       "name": "Teemo",
-      "type": "Ranged Caster",
-      "traits": ["Space Groove", "Shepherd"],
+      "type": "Magic Marksman",
+      "traits": [
+        "Space Groove",
+        "Shepherd"
+      ],
       "cost": 1,
       "ability": {
         "name": "Double Time",
@@ -661,8 +830,11 @@
     },
     {
       "name": "The Mighty Mech",
-      "type": "Melee Tank",
-      "traits": ["Mecha", "Voyager"],
+      "type": "Magic Tank",
+      "traits": [
+        "Mecha",
+        "Voyager"
+      ],
       "cost": 4,
       "ability": {
         "name": "Gravity Matrix",
@@ -673,8 +845,11 @@
     },
     {
       "name": "Twisted Fate",
-      "type": "Ranged Caster",
-      "traits": ["Stargazer", "Fateweaver"],
+      "type": "Magic Caster",
+      "traits": [
+        "Stargazer",
+        "Fateweaver"
+      ],
       "cost": 1,
       "ability": {
         "name": "Fate's Gambit",
@@ -685,8 +860,12 @@
     },
     {
       "name": "Urgot",
-      "type": "Ranged Bruiser",
-      "traits": ["Mecha", "Brawler", "Marauder"],
+      "type": "Attack Fighter",
+      "traits": [
+        "Mecha",
+        "Brawler",
+        "Marauder"
+      ],
       "triple_trait": true,
       "cost": 3,
       "ability": {
@@ -698,8 +877,11 @@
     },
     {
       "name": "Veigar",
-      "type": "Ranged Caster",
-      "traits": ["Meeple", "Replicator"],
+      "type": "Magic Caster",
+      "traits": [
+        "Meeple",
+        "Replicator"
+      ],
       "cost": 1,
       "ability": {
         "name": "Meepteor Shower",
@@ -710,8 +892,10 @@
     },
     {
       "name": "Vex",
-      "type": "Ranged Caster",
-      "traits": ["Doomer"],
+      "type": "Magic Assassin",
+      "traits": [
+        "Doomer"
+      ],
       "cost": 5,
       "ability": {
         "name": "Lend Me a Hand, Shadow!",
@@ -722,8 +906,11 @@
     },
     {
       "name": "Viktor",
-      "type": "Ranged Caster",
-      "traits": ["Psionic", "Conduit"],
+      "type": "Magic Caster",
+      "traits": [
+        "Psionic",
+        "Conduit"
+      ],
       "cost": 3,
       "ability": {
         "name": "Psionic Storm",
@@ -734,8 +921,11 @@
     },
     {
       "name": "Xayah",
-      "type": "Ranged Attack Carry",
-      "traits": ["Stargazer", "Sniper"],
+      "type": "Attack Marksman",
+      "traits": [
+        "Stargazer",
+        "Sniper"
+      ],
       "cost": 4,
       "ability": {
         "name": "Stellar Ricochet",
@@ -746,8 +936,10 @@
     },
     {
       "name": "Zed",
-      "type": "Melee Assassin",
-      "traits": ["Galaxy Hunter"],
+      "type": "Attack Fighter",
+      "traits": [
+        "Galaxy Hunter"
+      ],
       "cost": 5,
       "ability": {
         "name": "Quantum Clone",
@@ -758,8 +950,11 @@
     },
     {
       "name": "Zoe",
-      "type": "Ranged Caster",
-      "traits": ["Arbiter", "Conduit"],
+      "type": "Magic Caster",
+      "traits": [
+        "Arbiter",
+        "Conduit"
+      ],
       "cost": 2,
       "ability": {
         "name": "Paddle Star",
