@@ -5,37 +5,59 @@ import type {
   ActivatedSynergy,
 } from "../types/tft";
 
+export const MISC_BUCKET = "Misc / Solo";
+
 export function buildSynergyGrid(
   units: Unit[],
   synergyData: SynergyData
 ): GridData {
   const grid: GridData = {};
+  const originNames = new Set(synergyData.origins.map((origin) => origin.name));
+  const classNames = new Set(synergyData.classes.map((classData) => classData.name));
 
-  // Initialize grid with all origin-class combinations
+  // Initialize grid with all origin-class combinations plus a misc row/column
   synergyData.origins.forEach((origin) => {
     grid[origin.name] = {};
     synergyData.classes.forEach((className) => {
       grid[origin.name][className.name] = { champions: [] };
     });
+    grid[origin.name][MISC_BUCKET] = { champions: [] };
   });
+  grid[MISC_BUCKET] = {};
+  synergyData.classes.forEach((classData) => {
+    grid[MISC_BUCKET][classData.name] = { champions: [] };
+  });
+  grid[MISC_BUCKET][MISC_BUCKET] = { champions: [] };
 
   // Populate grid with champions
   units.forEach((unit) => {
-    unit.traits.forEach((trait) => {
-      // Check if trait is an origin
-      const origin = synergyData.origins.find((o) => o.name === trait);
-      if (origin) {
-        // Find all classes this unit has
-        unit.traits.forEach((classTrait) => {
-          const classData = synergyData.classes.find(
-            (c) => c.name === classTrait
-          );
-          if (classData) {
-            grid[origin.name][classData.name].champions.push(unit);
-          }
+    const origins = unit.traits.filter((trait) => originNames.has(trait));
+    const classes = unit.traits.filter((trait) => classNames.has(trait));
+
+    if (origins.length > 0 && classes.length > 0) {
+      origins.forEach((origin) => {
+        classes.forEach((className) => {
+          grid[origin][className].champions.push(unit);
         });
-      }
-    });
+      });
+      return;
+    }
+
+    if (origins.length > 0) {
+      origins.forEach((origin) => {
+        grid[origin][MISC_BUCKET].champions.push(unit);
+      });
+      return;
+    }
+
+    if (classes.length > 0) {
+      classes.forEach((className) => {
+        grid[MISC_BUCKET][className].champions.push(unit);
+      });
+      return;
+    }
+
+    grid[MISC_BUCKET][MISC_BUCKET].champions.push(unit);
   });
 
   return grid;

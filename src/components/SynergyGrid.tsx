@@ -16,6 +16,7 @@ import {
   getCostColorClass,
   calculateActivatedSynergies,
   calculateUnitCount,
+  MISC_BUCKET,
 } from "../utils/gridBuilder";
 import { Tooltip } from "./Tooltip";
 import { CustomTagInput } from "./CustomTagInput";
@@ -607,6 +608,96 @@ export const SynergyGrid: React.FC = () => {
     );
   }
 
+  const originNameSet = new Set(
+    synergyData.origins.map((origin) => origin.name)
+  );
+  const classNameSet = new Set(
+    synergyData.classes.map((classData) => classData.name)
+  );
+  const selectedTraitNames = new Set([
+    ...Array.from(selectedOrigins),
+    ...Array.from(selectedClasses),
+  ]);
+  const hasTraitSelection = selectedTraitNames.size > 0;
+  const gridOrigins = [...synergyData.origins.map((origin) => origin.name), MISC_BUCKET];
+  const gridClasses = [...synergyData.classes.map((classData) => classData.name), MISC_BUCKET];
+
+  const getChampionTraitGroups = (champion: Unit) => {
+    const origins = champion.traits.filter((trait) => originNameSet.has(trait));
+    const classes = champion.traits.filter((trait) => classNameSet.has(trait));
+
+    return { origins, classes };
+  };
+
+  const getSelectedMatches = (champion: Unit) =>
+    champion.traits.filter((trait) => selectedTraitNames.has(trait));
+
+  const getCellChampions = (originName: string, className: string) => {
+    return units.filter((champion) => {
+      const { origins, classes } = getChampionTraitGroups(champion);
+      const selectedMatches = getSelectedMatches(champion);
+      const matchingOrigins = origins.filter((trait) =>
+        selectedOrigins.has(trait)
+      );
+      const matchingClasses = classes.filter((trait) =>
+        selectedClasses.has(trait)
+      );
+      const hasSelectedMatch = selectedMatches.length > 0;
+      const fitsSelectedCombination =
+        matchingOrigins.length > 0 && matchingClasses.length > 0;
+
+      if (!hasTraitSelection) {
+        if (originName !== MISC_BUCKET && className !== MISC_BUCKET) {
+          return origins.includes(originName) && classes.includes(className);
+        }
+
+        if (originName !== MISC_BUCKET && className === MISC_BUCKET) {
+          return (
+            classes.length === 0 &&
+            origins[0] === originName
+          );
+        }
+
+        if (originName === MISC_BUCKET && className !== MISC_BUCKET) {
+          return (
+            origins.length === 0 &&
+            classes[0] === className
+          );
+        }
+
+        return origins.length === 0 && classes.length === 0;
+      }
+
+      if (!hasSelectedMatch) {
+        return false;
+      }
+
+      if (originName !== MISC_BUCKET && className !== MISC_BUCKET) {
+        return (
+          selectedOrigins.has(originName) &&
+          selectedClasses.has(className) &&
+          fitsSelectedCombination &&
+          matchingOrigins.includes(originName) &&
+          matchingClasses.includes(className)
+        );
+      }
+
+      if (originName !== MISC_BUCKET && className === MISC_BUCKET) {
+        return !fitsSelectedCombination && matchingOrigins[0] === originName;
+      }
+
+      if (originName === MISC_BUCKET && className !== MISC_BUCKET) {
+        return !fitsSelectedCombination && matchingClasses[0] === className;
+      }
+
+      return (
+        !fitsSelectedCombination &&
+        matchingOrigins.length === 0 &&
+        matchingClasses.length === 0
+      );
+    });
+  };
+
   const renderChampion = (champion: Unit) => {
     const tooltipContent: TooltipContent = {
       type: "champion",
@@ -819,31 +910,38 @@ export const SynergyGrid: React.FC = () => {
             <thead>
               <tr className="bg-slate-600">
                 <th className="w-20 p-1 border border-slate-500 text-xs"></th>
-                {synergyData.origins.map((origin) => {
+                {gridOrigins.map((originName) => {
+                  const origin =
+                    synergyData.origins.find((item) => item.name === originName) ||
+                    null;
                   const isOriginActivated = activatedSynergies.some(
-                    (s) => s.name === origin.name && s.isOrigin
+                    (s) => s.name === originName && s.isOrigin
                   );
-                  const isColumnSelected = selectedOrigins.has(origin.name);
+                  const isColumnSelected = selectedOrigins.has(originName);
+                  const isMiscColumn = originName === MISC_BUCKET;
 
                   const handleColumnClick = () => {
+                    if (isMiscColumn) {
+                      return;
+                    }
                     const newSelectedOrigins = new Set(selectedOrigins);
                     if (isColumnSelected) {
-                      newSelectedOrigins.delete(origin.name);
+                      newSelectedOrigins.delete(originName);
                     } else {
-                      newSelectedOrigins.add(origin.name);
+                      newSelectedOrigins.add(originName);
                     }
                     setSelectedOrigins(newSelectedOrigins);
                   };
 
                   return (
                     <th
-                      key={origin.name}
+                      key={originName}
                       className={`cursor-pointer p-1 border border-slate-500 text-center min-w-24 transition-colors ${
-                        hoveredOrigin === origin.name ? "bg-slate-500" : ""
+                        hoveredOrigin === originName ? "bg-slate-500" : ""
                       } ${isColumnSelected ? "bg-blue-900/30" : ""} ${
                         isOriginActivated ? "bg-green-900/20" : ""
                       }`}
-                      onMouseEnter={() => setHoveredOrigin(origin.name)}
+                      onMouseEnter={() => setHoveredOrigin(originName)}
                       onMouseLeave={() => setHoveredOrigin(null)}
                       onClick={handleColumnClick}
                       style={
@@ -855,10 +953,18 @@ export const SynergyGrid: React.FC = () => {
                           : {}
                       }
                     >
-                      {renderOriginTooltip(origin)}
-                      <div className="text-xs text-gray-300 mt-1 truncate">
-                        {Object.keys(origin.bonuses).join("/")}
-                      </div>
+                      {origin ? (
+                        <>
+                          {renderOriginTooltip(origin)}
+                          <div className="text-xs text-gray-300 mt-1 truncate">
+                            {Object.keys(origin.bonuses).join("/")}
+                          </div>
+                        </>
+                      ) : (
+                        <div className="text-white font-semibold text-xs truncate">
+                          {MISC_BUCKET}
+                        </div>
+                      )}
                     </th>
                   );
                 })}
@@ -867,33 +973,40 @@ export const SynergyGrid: React.FC = () => {
 
             {/* Data Rows */}
             <tbody>
-              {synergyData.classes.map((classData) => {
-                const isRowSelected = selectedClasses.has(classData.name);
-                const isRowHovered = hoveredClass === classData.name;
+              {gridClasses.map((className) => {
+                const classData =
+                  synergyData.classes.find((item) => item.name === className) ||
+                  null;
+                const isRowSelected = selectedClasses.has(className);
+                const isRowHovered = hoveredClass === className;
+                const isMiscRow = className === MISC_BUCKET;
 
                 const handleRowClick = () => {
+                  if (isMiscRow) {
+                    return;
+                  }
                   const newSelectedClasses = new Set(selectedClasses);
                   if (isRowSelected) {
-                    newSelectedClasses.delete(classData.name);
+                    newSelectedClasses.delete(className);
                   } else {
-                    newSelectedClasses.add(classData.name);
+                    newSelectedClasses.add(className);
                   }
                   setSelectedClasses(newSelectedClasses);
                 };
 
                 return (
                   <tr
-                    key={classData.name}
+                    key={className}
                     className={`${
                       isRowHovered ? "bg-slate-600" : "hover:bg-slate-600/50"
                     } ${isRowSelected ? "bg-blue-900/30" : ""}`}
-                    onMouseEnter={() => setHoveredClass(classData.name)}
+                    onMouseEnter={() => setHoveredClass(className)}
                     onMouseLeave={() => setHoveredClass(null)}
                   >
                     <td
                       className={`cursor-pointer p-1 border border-slate-500 ${
                         activatedSynergies.some(
-                          (s) => s.name === classData.name && !s.isOrigin
+                          (s) => s.name === className && !s.isOrigin
                         )
                           ? "bg-green-900/20"
                           : "bg-slate-600"
@@ -901,29 +1014,36 @@ export const SynergyGrid: React.FC = () => {
                       onClick={handleRowClick}
                     >
                       <div className="text-center">
-                        {renderClassTooltip(classData)}
-                        <div className="text-xs text-gray-300 mt-1 truncate">
-                          {Object.keys(classData.bonuses).join("/")}
-                        </div>
+                        {classData ? (
+                          <>
+                            {renderClassTooltip(classData)}
+                            <div className="text-xs text-gray-300 mt-1 truncate">
+                              {Object.keys(classData.bonuses).join("/")}
+                            </div>
+                          </>
+                        ) : (
+                          <div className="text-white font-semibold text-xs truncate">
+                            {MISC_BUCKET}
+                          </div>
+                        )}
                       </div>
                     </td>
-                    {synergyData.origins.map((origin) => {
-                      const cell = gridData[origin.name]?.[classData.name];
-                      const champions = cell?.champions || [];
-                      const isColumnSelected = selectedOrigins.has(origin.name);
+                    {gridOrigins.map((originName) => {
+                      const champions = getCellChampions(originName, className);
+                      const isColumnSelected = selectedOrigins.has(originName);
                       const isColumnHovered =
-                        hoveredOrigin === origin.name ||
-                        (hoveredCell && hoveredCell.origin === origin.name);
+                        hoveredOrigin === originName ||
+                        (hoveredCell && hoveredCell.origin === originName);
                       const isRowHovered =
-                        hoveredClass === classData.name ||
-                        (hoveredCell && hoveredCell.class === classData.name);
+                        hoveredClass === className ||
+                        (hoveredCell && hoveredCell.class === className);
                       const isCellHighlighted =
                         isRowSelected || isColumnSelected;
                       const isCellHovered = isRowHovered || isColumnHovered;
                       const isCurrentCellHovered =
                         hoveredCell &&
-                        hoveredCell.origin === origin.name &&
-                        hoveredCell.class === classData.name;
+                        hoveredCell.origin === originName &&
+                        hoveredCell.class === className;
 
                       // Determine background color based on state
                       let cellBgClass = "";
@@ -952,12 +1072,12 @@ export const SynergyGrid: React.FC = () => {
 
                       return (
                         <td
-                          key={`${origin.name}-${classData.name}`}
+                          key={`${originName}-${className}`}
                           className={`p-1 border border-slate-500 min-w-24 ${cellBgClass}`}
                           onMouseEnter={() =>
                             setHoveredCell({
-                              origin: origin.name,
-                              class: classData.name,
+                              origin: originName,
+                              class: className,
                             })
                           }
                           onMouseLeave={() => setHoveredCell(null)}
