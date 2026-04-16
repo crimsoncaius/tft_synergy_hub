@@ -4,6 +4,7 @@ import type {
   Trait,
   SynergyData,
   GridData,
+  BuiltSynergyGrid,
   TooltipContent,
   SavedTeam,
   SavedTeamsData,
@@ -33,6 +34,10 @@ export const SynergyGrid: React.FC = () => {
   const [synergyData, setSynergyData] = useState<SynergyData | null>(null);
   const [units, setUnits] = useState<Unit[]>([]);
   const [gridData, setGridData] = useState<GridData>({});
+  const [gridOrigins, setGridOrigins] = useState<string[]>([MISC_BUCKET]);
+  const [gridClasses, setGridClasses] = useState<string[]>([MISC_BUCKET]);
+  const [loneOrigins, setLoneOrigins] = useState<Set<string>>(new Set());
+  const [loneClasses, setLoneClasses] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [hoveredChampion, setHoveredChampion] = useState<string | null>(null);
   const [hoveredOrigin, setHoveredOrigin] = useState<string | null>(null);
@@ -127,12 +132,15 @@ export const SynergyGrid: React.FC = () => {
 
         setSynergyData(synergyDataRaw as unknown as SynergyData);
         setUnits(unitsDataRaw.units as unknown as Unit[]);
-        setGridData(
-          buildSynergyGrid(
-            unitsDataRaw.units as unknown as Unit[],
-            synergyDataRaw as unknown as SynergyData
-          )
+        const builtGrid: BuiltSynergyGrid = buildSynergyGrid(
+          unitsDataRaw.units as unknown as Unit[],
+          synergyDataRaw as unknown as SynergyData
         );
+        setGridData(builtGrid.grid);
+        setGridOrigins(builtGrid.gridOrigins);
+        setGridClasses(builtGrid.gridClasses);
+        setLoneOrigins(builtGrid.loneOrigins);
+        setLoneClasses(builtGrid.loneClasses);
 
         // Create suggestions array for autocomplete (will be updated when champions are selected)
         const championSuggestions = (
@@ -619,12 +627,22 @@ export const SynergyGrid: React.FC = () => {
     ...Array.from(selectedClasses),
   ]);
   const hasTraitSelection = selectedTraitNames.size > 0;
-  const gridOrigins = [...synergyData.origins.map((origin) => origin.name), MISC_BUCKET];
-  const gridClasses = [...synergyData.classes.map((classData) => classData.name), MISC_BUCKET];
 
   const getChampionTraitGroups = (champion: Unit) => {
-    const origins = champion.traits.filter((trait) => originNameSet.has(trait));
-    const classes = champion.traits.filter((trait) => classNameSet.has(trait));
+    const origins = Array.from(
+      new Set(
+        champion.traits
+          .filter((trait) => originNameSet.has(trait))
+          .map((trait) => (loneOrigins.has(trait) ? MISC_BUCKET : trait))
+      )
+    );
+    const classes = Array.from(
+      new Set(
+        champion.traits
+          .filter((trait) => classNameSet.has(trait))
+          .map((trait) => (loneClasses.has(trait) ? MISC_BUCKET : trait))
+      )
+    );
 
     return { origins, classes };
   };
@@ -936,13 +954,18 @@ export const SynergyGrid: React.FC = () => {
                   return (
                     <th
                       key={originName}
-                      className={`cursor-pointer p-1 border border-slate-500 text-center min-w-24 transition-colors ${
-                        hoveredOrigin === originName ? "bg-slate-500" : ""
+                      className={`${isMiscColumn ? "cursor-default" : "cursor-pointer"} p-1 border border-slate-500 text-center min-w-24 transition-colors ${
+                        !isMiscColumn && hoveredOrigin === originName ? "bg-slate-500" : ""
                       } ${isColumnSelected ? "bg-blue-900/30" : ""} ${
                         isOriginActivated ? "bg-green-900/20" : ""
-                      }`}
-                      onMouseEnter={() => setHoveredOrigin(originName)}
-                      onMouseLeave={() => setHoveredOrigin(null)}
+                      } ${isMiscColumn ? "bg-slate-700 text-gray-400" : ""}
+                      `}
+                      onMouseEnter={() =>
+                        !isMiscColumn && setHoveredOrigin(originName)
+                      }
+                      onMouseLeave={() =>
+                        !isMiscColumn && setHoveredOrigin(null)
+                      }
                       onClick={handleColumnClick}
                       style={
                         isColumnSelected && isOriginActivated
@@ -961,7 +984,7 @@ export const SynergyGrid: React.FC = () => {
                           </div>
                         </>
                       ) : (
-                        <div className="text-white font-semibold text-xs truncate">
+                        <div className="font-semibold text-xs truncate text-gray-400">
                           {MISC_BUCKET}
                         </div>
                       )}
@@ -998,18 +1021,25 @@ export const SynergyGrid: React.FC = () => {
                   <tr
                     key={className}
                     className={`${
-                      isRowHovered ? "bg-slate-600" : "hover:bg-slate-600/50"
+                      isMiscRow
+                        ? "bg-slate-700"
+                        : isRowHovered
+                          ? "bg-slate-600"
+                          : "hover:bg-slate-600/50"
                     } ${isRowSelected ? "bg-blue-900/30" : ""}`}
-                    onMouseEnter={() => setHoveredClass(className)}
-                    onMouseLeave={() => setHoveredClass(null)}
+                    onMouseEnter={() => !isMiscRow && setHoveredClass(className)}
+                    onMouseLeave={() => !isMiscRow && setHoveredClass(null)}
                   >
                     <td
-                      className={`cursor-pointer p-1 border border-slate-500 ${
+                      className={`${isMiscRow ? "cursor-default text-gray-400" : "cursor-pointer"} p-1 border border-slate-500 ${
+                        !isMiscRow &&
                         activatedSynergies.some(
                           (s) => s.name === className && !s.isOrigin
                         )
                           ? "bg-green-900/20"
-                          : "bg-slate-600"
+                          : isMiscRow
+                            ? "bg-slate-700"
+                            : "bg-slate-600"
                       }`}
                       onClick={handleRowClick}
                     >
@@ -1022,7 +1052,7 @@ export const SynergyGrid: React.FC = () => {
                             </div>
                           </>
                         ) : (
-                          <div className="text-white font-semibold text-xs truncate">
+                          <div className="font-semibold text-xs truncate text-gray-400">
                             {MISC_BUCKET}
                           </div>
                         )}

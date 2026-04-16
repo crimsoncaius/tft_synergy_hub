@@ -2,6 +2,7 @@ import type {
   Unit,
   SynergyData,
   GridData,
+  BuiltSynergyGrid,
   ActivatedSynergy,
 } from "../types/tft";
 
@@ -10,48 +11,70 @@ export const MISC_BUCKET = "Misc / Solo";
 export function buildSynergyGrid(
   units: Unit[],
   synergyData: SynergyData
-): GridData {
+): BuiltSynergyGrid {
   const grid: GridData = {};
   const originNames = new Set(synergyData.origins.map((origin) => origin.name));
   const classNames = new Set(synergyData.classes.map((classData) => classData.name));
+  const loneOrigins = new Set(
+    synergyData.origins
+      .filter((origin) => origin.champions.length === 1)
+      .map((origin) => origin.name)
+  );
+  const loneClasses = new Set(
+    synergyData.classes
+      .filter((classData) => classData.champions.length === 1)
+      .map((classData) => classData.name)
+  );
+  const gridOrigins = [
+    ...synergyData.origins
+      .map((origin) => origin.name)
+      .filter((originName) => !loneOrigins.has(originName)),
+    MISC_BUCKET,
+  ];
+  const gridClasses = [
+    ...synergyData.classes
+      .map((classData) => classData.name)
+      .filter((className) => !loneClasses.has(className)),
+    MISC_BUCKET,
+  ];
 
   // Initialize grid with all origin-class combinations plus a misc row/column
-  synergyData.origins.forEach((origin) => {
-    grid[origin.name] = {};
-    synergyData.classes.forEach((className) => {
-      grid[origin.name][className.name] = { champions: [] };
+  gridOrigins.forEach((originName) => {
+    grid[originName] = {};
+    gridClasses.forEach((className) => {
+      grid[originName][className] = { champions: [] };
     });
-    grid[origin.name][MISC_BUCKET] = { champions: [] };
   });
-  grid[MISC_BUCKET] = {};
-  synergyData.classes.forEach((classData) => {
-    grid[MISC_BUCKET][classData.name] = { champions: [] };
-  });
-  grid[MISC_BUCKET][MISC_BUCKET] = { champions: [] };
 
   // Populate grid with champions
   units.forEach((unit) => {
-    const origins = unit.traits.filter((trait) => originNames.has(trait));
-    const classes = unit.traits.filter((trait) => classNames.has(trait));
+    const origins = unit.traits
+      .filter((trait) => originNames.has(trait))
+      .map((trait) => (loneOrigins.has(trait) ? MISC_BUCKET : trait));
+    const classes = unit.traits
+      .filter((trait) => classNames.has(trait))
+      .map((trait) => (loneClasses.has(trait) ? MISC_BUCKET : trait));
+    const routedOrigins = Array.from(new Set(origins));
+    const routedClasses = Array.from(new Set(classes));
 
-    if (origins.length > 0 && classes.length > 0) {
-      origins.forEach((origin) => {
-        classes.forEach((className) => {
+    if (routedOrigins.length > 0 && routedClasses.length > 0) {
+      routedOrigins.forEach((origin) => {
+        routedClasses.forEach((className) => {
           grid[origin][className].champions.push(unit);
         });
       });
       return;
     }
 
-    if (origins.length > 0) {
-      origins.forEach((origin) => {
+    if (routedOrigins.length > 0) {
+      routedOrigins.forEach((origin) => {
         grid[origin][MISC_BUCKET].champions.push(unit);
       });
       return;
     }
 
-    if (classes.length > 0) {
-      classes.forEach((className) => {
+    if (routedClasses.length > 0) {
+      routedClasses.forEach((className) => {
         grid[MISC_BUCKET][className].champions.push(unit);
       });
       return;
@@ -60,7 +83,13 @@ export function buildSynergyGrid(
     grid[MISC_BUCKET][MISC_BUCKET].champions.push(unit);
   });
 
-  return grid;
+  return {
+    grid,
+    gridOrigins,
+    gridClasses,
+    loneOrigins,
+    loneClasses,
+  };
 }
 
 export function getCostColorClass(cost: number): string {

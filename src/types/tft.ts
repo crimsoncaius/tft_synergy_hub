@@ -35,6 +35,14 @@ export interface GridData {
   };
 }
 
+export interface BuiltSynergyGrid {
+  grid: GridData;
+  gridOrigins: string[];
+  gridClasses: string[];
+  loneOrigins: Set<string>;
+  loneClasses: Set<string>;
+}
+
 export interface TooltipContent {
   type: "origin" | "class" | "champion";
   data: Trait | Unit;
